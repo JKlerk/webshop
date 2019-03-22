@@ -1,0 +1,138 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Anton|Bangers|Nixie+One');
+
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+@tailwind utilities;
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor..
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+
+.btn {
+  @apply p-2 text-center rounded block font-normal font-anton;
+}
+
+.abtn{
+	@apply no-underline cursor-pointer text-black;
+}
+
+.abtn:hover{
+	@apply underline;
+}
+
+.btn-blue {
+  @apply bg-blue text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+.btn-indigo {
+	@apply bg-indigo text-white;
+}
+.btn-indigo:hover {
+	@apply bg-indigo-light;
+}
+
+.btn-teal {
+	@apply bg-teal text-white;
+}
+.btn-teal:hover {
+	@apply bg-teal-light;
+}
+
+.btn-red {
+	@apply bg-red text-white;
+}
+.btn-red:hover {
+	@apply bg-red-light;
+}
+
+.btn-yellow {
+  @apply bg-yellow text-black;
+}
+.btn-yellow:hover {
+  @apply bg-yellow-dark;
+}
+
+.btn-black {
+  @apply bg-black text-yellow;
+}
+.btn-black:hover {
+  @apply bg-grey-darkest;
+}
+
+.test2{
+	width: 400px;
+	height: 400px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.design{
+	width: 400px;
+	height: 400px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+}
+
+ul{
+	list-style: none;
+}
