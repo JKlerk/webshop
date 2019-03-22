@@ -6692,7 +6692,6 @@ table {
   border-radius: .25rem;
   display: block;
   font-weight: 400;
-  font-family: Anton;
 }
 
 .abtn {
@@ -6752,7 +6751,7 @@ table {
 
 .btn-black {
   background-color: #22292f;
-  color: #ffed4a;
+  color: #fff;
 }
 
 .btn-black:hover {

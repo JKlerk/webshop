@@ -4,17 +4,17 @@
 
 <div id="app">
 	
-	<div class="p-5 bg-yellow w-full shadow text-center">
-		<h1 class="font-anton text-5xl text-black">Tabbishop</h1>
+	<div class="p-5 bg-white w-full shadow text-center">
+		<h1 class="font-anton text-5xl text-black">Webshop</h1>
 		<p class="text-grey-darkest">Tekst</p>
 	</div>
 
-    <nav class="bg-black p-3 shadow flex mb-16">
+    <nav class="bg-black p-3 shadow flex mb-8">
         <div class="p-1 flex justify-center w-full">
-            <a class="hover:text-green-light mx-3 text-white text-base" href="{{ url('/') }}">Home</a>
-            <a class="hover:text-green-light mx-3 text-white text-base"href="{{ url('/') }}">Figures</a>
-            <a class="hover:text-green-light mx-3 text-white text-base"href="{{ url('/') }}">Games</a>
-            <a class="hover:text-green-light mx-3 text-white text-base" href="{{ url('/') }}">Contact</a>
+            <a class="hover:text-grey mx-3 text-white text-base" href="{{ url('/') }}">Home</a>
+            <a class="hover:text-grey mx-3 text-white text-base"href="{{ url('/') }}">Example 1</a>
+            <a class="hover:text-grey mx-3 text-white text-base"href="{{ url('/') }}">Example 2</a>
+            <a class="hover:text-grey mx-3 text-white text-base" href="{{ url('/') }}">Contact</a>
         </div>
     </nav>
 </div>

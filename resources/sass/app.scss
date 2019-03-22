@@ -55,7 +55,7 @@
  */
 
 .btn {
-  @apply p-2 text-center rounded block font-normal font-anton;
+  @apply p-2 text-center rounded block font-normal;
 }
 
 .abtn{
@@ -102,7 +102,7 @@
 }
 
 .btn-black {
-  @apply bg-black text-yellow;
+  @apply bg-black text-white;
 }
 .btn-black:hover {
   @apply bg-grey-darkest;
