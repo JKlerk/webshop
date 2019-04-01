@@ -6758,6 +6758,18 @@ table {
   background-color: #3d4852;
 }
 
+.bg-black-full {
+  background-color: black;
+}
+
+.text-viper {
+  color: #9dfa64;
+}
+
+.bg-viper {
+  color: #9dfa64;
+}
+
 .test2 {
   width: 400px;
   height: 400px;

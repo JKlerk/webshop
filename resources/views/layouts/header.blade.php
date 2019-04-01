@@ -12,8 +12,8 @@
     <nav class="bg-black p-3 shadow flex mb-8">
         <div class="p-1 flex justify-center w-full">
             <a class="hover:text-grey mx-3 text-white text-base" href="{{ url('/') }}">Home</a>
-            <a class="hover:text-grey mx-3 text-white text-base"href="{{ url('/') }}">Example 1</a>
-            <a class="hover:text-grey mx-3 text-white text-base"href="{{ url('/') }}">Example 2</a>
+            <a class="hover:text-grey mx-3 text-white text-base" href="{{ url('/') }}">Example 1</a>
+            <a class="hover:text-grey mx-3 text-white text-base" href="{{ url('/') }}">Example 2</a>
             <a class="hover:text-grey mx-3 text-white text-base" href="{{ url('/') }}">Contact</a>
         </div>
     </nav>
