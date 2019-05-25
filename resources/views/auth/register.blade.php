@@ -2,6 +2,7 @@
 <form method="POST" action="{{ route('register') }}" autocomplete="off">
     @csrf
     <div class="animated fadeIn container mx-auto rounded shadow border border-grey p-10" style="max-width: 400px;">
+        <a class="text-black no-underline hover:underline" href="/"><i class="fas fa-arrow-left"></i></a>
         <div class="text-white">
             <h1 class="text-3xl text-black mb-5 text-center">Register page</h1>
             @if ($errors)
