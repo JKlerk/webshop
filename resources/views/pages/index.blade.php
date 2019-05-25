@@ -35,8 +35,30 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="design cursor-default bg-white my-5 mx-3 hover:border-grey border-grey border-2 relative rounded shadow">
+				<h1 class="font-banger mt-3 text-center">Vue</h1>
+				<div id="root">
+					<input class="border" type="text" name="" v-model="message">
+
+					<p>@{{ message }}</p>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
 @include('layouts.footer')
+<script>
+
+	new Vue({
+		el: '#root',
+
+		data: {
+
+			message: 'Hello world'
+		}
+	})
+</script>
 </body>
 </html>
