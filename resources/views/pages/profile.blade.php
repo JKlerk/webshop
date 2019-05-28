@@ -6,6 +6,22 @@
             	<div class="flex m-10 justify-center w-full">
             		<div class="w-1/5 border border-1 rounded">
             			<h3 class="text-center m-5">Orders</h3>
+            			<div class="flex mb-3 border-b border-t border-1">
+	            			<div class="w-1/2 my-auto ml-2">
+	            				<p class="">Order 1</p>
+	            			</div>
+	            			<div class="flex flex-1 justify-end mr-2">
+	            				<p class="bg-blue rounded text-white p-2 my-1">Status</p>
+	            			</div>
+            			</div>
+          			<div class="flex mb-3 border-b border-t border-1">
+	            			<div class="w-1/2 my-auto ml-2">
+	            				<p class="">Order 1</p>
+	            			</div>
+	            			<div class="flex flex-1 justify-end mr-2">
+	            				<p class="bg-blue rounded text-white p-2 my-1">Status</p>
+	            			</div>
+            			</div>
             		</div>
             		<div class="w-1/5 mx-5">
 	            		<p>Your name</p>
