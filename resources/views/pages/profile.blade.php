@@ -11,7 +11,7 @@
 	            				<p class="">Order 1</p>
 	            			</div>
 	            			<div class="flex flex-1 justify-end mr-2">
-	            				<p class="bg-blue rounded text-white p-2 my-1">Status</p>
+	            				<p class="bg-green rounded text-white p-2 my-1">Finished</p>
 	            			</div>
             			</div>
           			<div class="flex mb-3 border-b border-t border-1">
@@ -19,7 +19,7 @@
 	            				<p class="">Order 1</p>
 	            			</div>
 	            			<div class="flex flex-1 justify-end mr-2">
-	            				<p class="bg-blue rounded text-white p-2 my-1">Status</p>
+	            				<p class="bg-orange rounded text-white p-2 my-1">Waiting..</p>
 	            			</div>
             			</div>
             		</div>
