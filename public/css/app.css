@@ -6754,12 +6754,12 @@ table {
   color: #fff;
 }
 
-.btn-black:hover {
-  background-color: #3d4852;
-}
-
 .bg-black-full {
   background-color: black;
+}
+
+.bg-grey-darkest {
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .text-viper {

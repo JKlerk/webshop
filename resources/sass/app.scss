@@ -104,13 +104,19 @@
 .btn-black {
   @apply bg-black text-white;
 }
-.btn-black:hover {
-  @apply bg-grey-darkest;
-}
+
 
 .bg-black-full{
 	background-color: black;
 }
+
+.bg-grey-darkest{
+	background-color: rgba(0,0,0,0.8);
+}
+
+// .btn-black:hover {
+//   @apply bg-grey-darkest;
+// }
 
 .text-viper{
 	color: #9DFA64;

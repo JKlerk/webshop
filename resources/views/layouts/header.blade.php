@@ -6,17 +6,20 @@
 
 <div id="app">
 	
-	<div class="p-5 bg-white w-full shadow text-center">
-		<h1 class="font-anton text-5xl text-black">Webshop</h1>
-		<p class="text-grey-darkest">Tekst</p>
-	</div>
 
-    <nav class="bg-black p-3 shadow flex mb-8">
-        <div class="p-1 flex justify-end w-full">
-            <div class="w-full my-auto flex justify-end mr-3">
-                <a class="text-white no-underline hover:underline" href="/login">Login/Register</a>
+    <nav class="bg-grey-darkest p-1 shadow flex mb-8">
+        <div class="p-1 flex justify-center w-full">
+            <div class="container mx-auto max-w-xl my-auto flex my-auto">
+                <div class="flex justify-between w-1/4">
+                    <a class="text-white no-underline hover:underline my-auto" href="/login">Tab 1</a>
+                    <a class="text-white no-underline hover:underline my-auto" href="/login">Tab 2</a>
+                    <a class="text-white no-underline hover:underline my-auto" href="/login">Tab 3</a>
+                </div>
+                <div class="flex flex-1 justify-end">
+                    <a class="text-white no-underline hover:underline my-auto mr-2" href="/login">Login/Register</a>
+                    <a class="bg-green rounded text-white p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
+                </div>
             </div>
-            <a class="bg-green rounded text-white p-3 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
         </div>
     </nav>
 </div>

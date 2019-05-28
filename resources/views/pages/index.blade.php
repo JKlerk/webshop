@@ -4,50 +4,37 @@
 	@include('layouts.header')
 </head>
 <body class="animated fadeIn">
-	<div class="w-full shadow h-px my-2 bg-grey-darkest"></div>
 
-	<div class="min-h-screen md:flex">
-		@include('layouts.sidebar')
-		<div class="flex content-start flex-wrap mx-5 mt-1">
-			<div style="background-image: url(https://via.placeholder.com/400);" class="design cursor-default bg-white my-5 mx-3 hover:border-grey border-grey border-2 relative rounded shadow">
-				<h1 class="font-banger mt-3 text-center">Example</h1>
-				<div class="absolute pin-b pin-l">
-					<div class="w-12 shadow h-1 my-2 bg-black"></div>
-					<a class="btn btn-black text-xl w-32" href="#">Kopen</a></p>
-				</div>
-			</div>
+	<div class="container mx-auto max-w-xl">
+		<h1 class="">Products</h1>
 
-			<div style="background-image: url(https://via.placeholder.com/400);" class="design cursor-default bg-white my-5 mx-3 hover:border-grey border-grey border-2 relative rounded shadow">
-				<h1 class="font-banger mt-3 text-center">Example</h1>
-				<div class="absolute pin-b pin-l">
-					<div class="w-12 shadow h-1 my-2 bg-black"></div>
-					<a class="btn btn-black text-xl w-32" href="#">Kopen</a></p>
-				</div>
-			</div>
+		<div class="flex justify-center">
+			<div class="shadow w-full h-px my-2 bg-grey-darkest"></div>
+		</div>
+		<div class="flex justify-center">
+			<div class="w-full flex">
+				<div class="bg-grey-lightest w-full mx-2 p-5">
+					<h1>Title</h1>
+					<h2 class="text-grey mb-10">Short Desc</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-			<div class="test2 bg-white my-5 mx-3 hover:border-grey border-grey border-2 relative rounded shadow">
-				<img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-				<h1 class="font-banger mt-3 ml-2">Banner</h1>
-				<div class="px-6 py-4">
-					<div class="absolute pin-b pin-l">
-						<div class="w-12 text-center shadow h-1 my-2 bg-black"></div>
-						<a class="btn btn-black text-xl w-32" href="/view">Kopen</a>
+					<div class="w-full mt-5 flex justify-end">
+						<button class="p-2 bg-blue text-white rounded-full">Read more</button>
 					</div>
 				</div>
-			</div>
-
-			<div class="design cursor-default bg-white my-5 mx-3 hover:border-grey border-grey border-2 relative rounded shadow">
-				<h1 class="font-banger mt-3 text-center">Vue</h1>
-				<div id="root">
-					<input class="border" type="text" name="" v-model="message">
-
-					<p>@{{ message }}</p>
+				<div class="bg-grey-lightest w-full mx-2">
+					<h1>ss</h1>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
+
+
 @include('layouts.footer')
 <script>
 
