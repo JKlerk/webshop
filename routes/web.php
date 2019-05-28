@@ -27,3 +27,10 @@ Route::get('/create', [
     'middleware' => 'auth',
     'uses' => 'PageController@create'
 ]);
+
+Route::get('/admin', [
+    'middleware' => 'auth',
+    'uses' => 'AdminController@index'
+]);
+
+Route::get('/profile', 'PageController@profile');

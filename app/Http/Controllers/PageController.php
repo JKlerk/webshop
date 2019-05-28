@@ -24,4 +24,9 @@ class PageController extends Controller
     public function create() {
 		return view('pages.create');
     }
+
+    public function profile()
+    {
+        return view('pages.profile');
+    }
 }

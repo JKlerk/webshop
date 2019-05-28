@@ -24,7 +24,7 @@
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 					<div class="w-full mt-5 flex justify-end">
-						<button class="p-2 bg-blue text-white rounded-full">Read more</button>
+						<button class="p-2 bg-blue text-white rounded-full hover:bg-blue-dark hover:shadow">Read more</button>
 					</div>
 				</div>
 				<div class="bg-grey-lightest w-full mx-2">
