@@ -13,21 +13,21 @@
 			<div class="antialiased p-5 w-1/4 rounded border shadow mt-4 relative border-1 border-black" style="height: 500px;">
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Title</p>
-					<input name="title" class="w-full text-2xl mb-2 border border-black">
+					<input name="title" placeholder="Enter the name" class="w-full text-2xl mb-2 border border-black">
 				</div>
 
 	            <div class="mt-5">
 	            	<p class="text-trans font-semibold text-base">Description</p>
-	            	<textarea name="description" class="mt-2 rounded h-24 w-full text-base border border-black"></textarea>	
+	            	<textarea name="description" placeholder="Enter the description" class="mt-2 rounded h-24 w-full text-base border border-black"></textarea>	
 	            </div>
 
 	            <div class="mt-5">
 	            	<p class="text-trans font-semibold text-base">Sizes</p>
-	            	<select name="size">
-	            		<option></option>
-	            		<option value="S"></option>
-	            		<option value="M"></option>
-	            		<option value="L"></option>
+	            	<select class="border border-black" name="size">
+	            		<option value="" selected disabled>Select your size</option>
+	            		<option value="S">Small</option>
+	            		<option value="M">Medium</option>
+	            		<option value="L">Large</option>
 	            	</select>
 	            </div>
 
@@ -36,7 +36,7 @@
 	            	<input name="status" class="text-base rounded p-2 mt-2 border border-black">
 	            </div> --}}
 
-	            <
+	            
 
 	            <div class="mt-3">
 	            	<input type="file" name="src">
