@@ -19,6 +19,7 @@ class Products extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('status');
+            $table->string('size');
             $table->timestamps();
         });
     }
