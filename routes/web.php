@@ -18,12 +18,12 @@ Route::get('/view', 'ProductController@view');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
-Route::get('/edit/{id}', [
+Route::get('/admin/edit/{id}', [
     'middleware' => 'auth',
     'uses' => 'ProductController@edit'
 ]);
 
-Route::get('/create', [
+Route::get('/admin/create', [
     'middleware' => 'auth',
     'uses' => 'ProductController@create'
 ]);
