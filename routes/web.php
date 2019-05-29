@@ -23,10 +23,7 @@ Route::get('/admin/edit/{id}', [
     'uses' => 'ProductController@edit'
 ]);
 
-Route::get('/admin/create', [
-    'middleware' => 'auth',
-    'uses' => 'ProductController@create'
-]);
+Route::get('/admin/create', 'ProductController@create')->middleware('auth', 'checklvl');
 
 Route::get('/admin', [
     'middleware' => 'auth',
