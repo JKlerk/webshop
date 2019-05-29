@@ -12,18 +12,6 @@ class PageController extends Controller
     	$products = App\Product::all();
     	return view('pages.index', compact('products'));
     }
-    public function view() {
-    	return view('pages.view');
-    }
-    public function edit($id)
-    {
-        $article = App\Product::find($id);
-        return view('pages.edit', compact('products'));
-    }
-
-    public function create() {
-		return view('pages.create');
-    }
 
     public function profile()
     {
