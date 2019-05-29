@@ -15,7 +15,7 @@
             @endif
             <input class="border w-full p-2 text-xl border-grey mt-5" type="email" placeholder="E-Mail" name="email" value="{{ old('email') }}"/>
             <input class="border w-full p-2 text-xl border-grey" type="password" placeholder="Password" name="password"/>
-            <button type="submit" class="text-xl mt-4 w-full p-3 rounded shadow text-white bg-black">Login</button>
+            <button type="submit" class="text-xl mt-4 w-full p-3 rounded shadow bg-black text-white hover:bg-grey-darkest">Login</button>
             <p class="text-grey mt-5">Need an account? <a href="/register" class="text-blue no-underline hover:underline">Click here</a></p>
         </div>
     </div>
