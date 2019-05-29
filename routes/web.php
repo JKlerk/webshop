@@ -14,18 +14,18 @@
 Auth::routes();
 
 Route::get('/', 'PageController@index');
-Route::get('/view', 'PageController@view');
+Route::get('/view', 'ProductController@view');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
 Route::get('/edit/{id}', [
     'middleware' => 'auth',
-    'uses' => 'PageController@edit'
+    'uses' => 'ProductController@edit'
 ]);
 
 Route::get('/create', [
     'middleware' => 'auth',
-    'uses' => 'PageController@create'
+    'uses' => 'ProductController@create'
 ]);
 
 Route::get('/admin', [

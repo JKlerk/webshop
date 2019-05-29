@@ -37,7 +37,7 @@
         </div>
 
         <div class="w-full flex flex-1 justify-end mb-2 mt-6">
-        	<a href="" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Product</a>
+        	<a href="/create" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Product</a>
         </div>
     </div>
 </body>
