@@ -19,12 +19,12 @@
 
                 @if (Auth::check()) 
                     <div class="my-auto">
-                        <p class="text-white inline"><a class="text-white no-underline hover:underline" href="/profile">My profile</a></p>
-                        <a href="/logout" class="text-white hover:text-red no-underline"><i class="fas fa-sign-out-alt"></i></a>                             
+                        <p class="text-white inline"><a class="text-black no-underline hover:underline" href="/profile">My profile</a></p>
+                        <a href="/logout" class="text-black hover:text-red no-underline"><i class="fas fa-sign-out-alt"></i></a>                             
                     </div>
                 @else
-                    <a class="text-white no-underline hover:underline my-auto mr-2" href="/login">Login/Register</a>
-                    <a class="bg-green rounded text-white p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a class="text-black no-underline hover:underline my-auto mr-2" href="/login">Login/Register</a>
+                    <a class="bg-green rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
                 @endif
                 </div>
             </div>
