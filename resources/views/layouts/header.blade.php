@@ -7,13 +7,13 @@
 <div id="app">
 	
 
-    <nav class="bg-grey-darkest p-1 shadow flex mb-8">
+    <nav class="p-5 border-black border flex mb-8">
         <div class="p-2 flex justify-center w-full">
             <div class="container mx-auto max-w-xl my-auto flex my-auto">
                 <div class="flex justify-between w-1/4">
-                    <a class="text-white no-underline hover:underline my-auto" href="/login">Tab 1</a>
-                    <a class="text-white no-underline hover:underline my-auto" href="/login">Tab 2</a>
-                    <a class="text-white no-underline hover:underline my-auto" href="/login">Tab 3</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="/login">Tab 1</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="/login">Tab 2</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="/login">Tab 3</a>
                 </div>
                 <div class="flex flex-1 justify-end">
 
