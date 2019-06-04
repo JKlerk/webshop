@@ -24,7 +24,7 @@
                     </div>
                 @else
                     <a class="text-black no-underline hover:underline my-auto mr-2" href="/login">Login/Register</a>
-                    <a class="bg-green rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a class="bg-green text-white rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
                 @endif
                 </div>
             </div>

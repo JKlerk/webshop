@@ -31,3 +31,5 @@ Route::get('/admin', [
 ]);
 
 Route::get('/profile', 'PageController@profile');
+
+Route::post('/admin/create', 'ProductController@PostCreate')->middleware('auth', 'checklvl');

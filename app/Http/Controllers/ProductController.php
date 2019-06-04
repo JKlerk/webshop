@@ -20,4 +20,22 @@ class ProductController extends Controller
     public function create() {
 		return view('products.create');
     }
+
+
+    public function PostCreate(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'desc' => 'required',
+            'size' => 'required',
+            'price' => 'required'
+        ]);
+        $product = new App\Product;
+        $product->title = $request->title;
+        $product->desc = $request->desc;
+        $product->size = $request->size;
+        $product->price = $request->price;
+        $product->save();
+        return redirect(url('/admin'));
+    }
 }
