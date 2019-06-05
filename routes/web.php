@@ -39,3 +39,7 @@ Route::post('/admin/create', 'ProductController@PostCreate')->middleware('auth',
 
 Route::get('/admin/edit/{id}', 'ProductController@edit')->middleware('auth', 'checklvl');
 Route::post('/admin/edit/{id}', 'ProductController@PostEdit')->middleware('auth', 'checklvl');
+
+// Delete
+
+Route::get('/admin/delete/{id}', 'ProductController@delete')->middleware('auth', 'checklvl');

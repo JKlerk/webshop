@@ -46,4 +46,11 @@ class ProductController extends Controller
         $product->save();
         return redirect(url('/admin'));
     }
+
+    public function delete($id)
+    {
+        $product = App\Product::find($id);
+        $product->delete();
+        return redirect()->back();     
+    }
 }
