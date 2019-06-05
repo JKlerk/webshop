@@ -23,13 +23,19 @@ Route::get('/admin/edit/{id}', [
     'uses' => 'ProductController@edit'
 ]);
 
-Route::get('/admin/create', 'ProductController@create')->middleware('auth', 'checklvl');
 
-Route::get('/admin', [
-    'middleware' => 'auth',
-    'uses' => 'AdminController@index'
-]);
+Route::get('/admin', 'AdminController@index')->middleware('auth');
 
 Route::get('/profile', 'PageController@profile');
 
+
+
+// Create
+
+Route::get('/admin/create', 'ProductController@create')->middleware('auth', 'checklvl');
 Route::post('/admin/create', 'ProductController@PostCreate')->middleware('auth', 'checklvl');
+
+// Edit
+
+Route::get('/admin/edit/{id}', 'ProductController@edit')->middleware('auth', 'checklvl');
+Route::post('/admin/edit/{id}', 'ProductController@PostEdit')->middleware('auth', 'checklvl');
