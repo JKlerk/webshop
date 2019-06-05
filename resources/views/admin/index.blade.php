@@ -13,7 +13,7 @@
                     <p class="text-white">{{$product->title}} <span class="text-grey block">{{$product->desc}}</span></p>
                     
                     <div class="flex flex-1 justify-end items-center">
-                        <p class="text-white">${{$product->price}}.00</p>
+                        <p class="text-white">${{$product->price}}</p>
                     </div>
                 </div>
     			<div class="flex flex-1 justify-end items-center">
