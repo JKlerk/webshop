@@ -23,7 +23,7 @@
 
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Price</p>
-					<input name="price" value="{{$product->price}}" type="number" placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black">
+					<input name="price" value="{{$product->price}}" step="any" min="0" type="number" placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black">
 				</div>
 
             	<div class="absolute pin-t pin-r">
