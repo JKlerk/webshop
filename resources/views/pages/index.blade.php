@@ -11,7 +11,7 @@
 		<div class="flex justify-center">
 			<div class="shadow w-full h-px my-2 bg-grey-darkest"></div>
 		</div>
-		<div class="flex flex-wrap justify-center">
+		<div class="flex flex-wrap">
 			@foreach($products as $product)
 				<div class="border border-grey-light mx-1 p-5 mb-5" style="width: 49%">
 					<h1>{{$product->title}}</h1>
