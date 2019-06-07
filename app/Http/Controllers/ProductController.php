@@ -43,6 +43,7 @@ class ProductController extends Controller
     {
         $product = App\Product::find($id);
         $product->title = $request->title;
+        $product->desc = $request->shortdesc;
         $product->desc = $request->desc;
         $product->price = $request->price;
         $product->save();
