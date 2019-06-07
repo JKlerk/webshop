@@ -17,6 +17,7 @@ class Products extends Migration
             $table->increments('id');
             $table->string('src')->default('placeholder.png');
             $table->string('title');
+            $table->string('shortdesc');
             $table->string('desc');
             $table->string('status')->default('In Stock');
             $table->string('size')->nullable();

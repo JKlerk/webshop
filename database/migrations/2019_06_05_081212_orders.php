@@ -15,7 +15,7 @@ class Orders extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('product_id')
+            $table->string('product_id');
             $table->string('user_id');
             $table->string('status');
             $table->timestamps();
