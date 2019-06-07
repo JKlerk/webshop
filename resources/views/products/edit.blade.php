@@ -16,6 +16,11 @@
 					<input name="title" value="{{$product->title}}" placeholder="Enter the name" class="mt-2 w-full mb-2 border-b border-black">
 				</div>
 
+				<div class="mt-4">
+					<p class="text-trans font-semibold text-base">Short description</p>
+					<input name="title" value="{{$product->shortdesc}}" placeholder="Enter a short description" class="mt-2 w-full mb-2 border-b border-black">
+				</div>
+
 	            <div class="mt-5">
 	            	<p class="text-trans font-semibold text-base">Description</p>
 	            	<textarea name="desc" placeholder="Enter the description" class="mt-2 rounded h-24 w-full text-base border-b border-black">{{$product->desc}}</textarea>	

@@ -20,12 +20,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'shortdesc' => 'required',
             'desc' => 'required',
             'price' => 'required'
         ]);
         $product = new App\Product;
         $product->title = $request->title;
         $product->desc = $request->desc;
+        $product->shortdesc = $request->shortdesc;
         $product->price = $request->price;
         $product->save();
         return redirect(url('/admin'));

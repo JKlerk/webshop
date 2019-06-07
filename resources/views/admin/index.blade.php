@@ -10,7 +10,7 @@
         @foreach($products as $product)
             <div class="flex border border-black mb-2 m-3">
                 <div class="bg-black flex p-4 w-full">
-                    <p class="text-white">{{$product->title}} <span class="text-grey block">{{$product->desc}}</span></p>
+                    <p class="text-white">{{$product->title}} <span class="text-grey block">{{$product->shortdesc}}</span></p>
                     
                     <div class="flex flex-1 justify-end items-center">
                         <p class="text-white">${{$product->price}}</p>

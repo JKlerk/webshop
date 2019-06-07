@@ -35,7 +35,7 @@
 	            		</div>
 	            		<div class="mt-5">
 	            		@if(auth()->user()->level == 1)
-	            			<a class="p-2 rounded hover:shadow border text-black border-1 border-black no-underline " href="/admin/">Admin</a>
+	            			<a class="p-2 rounded hover:shadow border text-black border-1 border-black no-underline hover:underline" href="/admin/">Admin</a>
 	            		</div>
 	            		@endif
 	            	</div>

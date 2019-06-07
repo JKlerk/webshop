@@ -15,6 +15,7 @@
 	                <div class="text-red rounded mt-2">
 	                    <span class="invalid-feedback" role="alert">
 	                        <strong class="block">{{ $errors->first('title') }}</strong>
+	                        <strong class="block">{{ $errors->first('shortdesc') }}</strong>
 	                        <strong class="block">{{ $errors->first('desc') }}</strong>
 	                        <strong class="block">{{ $errors->first('price') }}</strong>
 	                    </span>
@@ -23,6 +24,11 @@
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Title</p>
 					<input name="title" placeholder="Enter the name" class="mt-2 w-full mb-2 border-b border-black">
+				</div>
+
+				<div class="mt-4">
+					<p class="text-trans font-semibold text-base">Short description</p>
+					<input name="shortdesc" placeholder="Enter a short description" class="mt-2 w-full mb-2 border-b border-black">
 				</div>
 
 	            <div class="mt-5">

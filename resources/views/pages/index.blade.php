@@ -16,11 +16,11 @@ s<!DOCTYPE html>
 				@foreach($products as $product)
 					<div class="bg-grey-lightest w-full mx-2 p-5">
 						<h1>{{$product->title}}</h1>
-						<h2 class="text-grey mb-10">{{$product->desc}}</h2>
-						<p>{{$product->shortdesc}}</p>
+						<h2 class="text-grey mb-10">{{$product->shortdesc}}</h2>
+						<p>{{$product->desc}}</p>
 
 						<div class="w-full mt-5 flex justify-end">
-							<button class="p-2 border-black border-2 hover:bg-grey-light hover:shadow"><a href="{{ url('view/' . $product->id) }}">Read more</a></button>
+							<button class="p-2 border-black border-2  bg-white no-underline hover:shadow"><a class="hover:underline text-black" href="{{ url('view/' . $product->id) }}">Read more</a></button>
 						</div>
 					</div>
 				@endforeach
