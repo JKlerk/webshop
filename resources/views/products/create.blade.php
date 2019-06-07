@@ -8,9 +8,11 @@
 	{{-- Black bar --}}
 	
 	<div class="min-h-screen md:flex">
-		<form autocomplete="off"  method="POST" action="{{ url("/admin/create") }}" enctype="multipart/formdata" class="flex w-full justify-center" _lpchecked="1">
+		<form autocomplete="off"  method="POST" action="{{ url("/admin/create") }}" enctype="multipart/form-data" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
-			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="max-height: 32rem;">
+			{{csrf_field()}}
+
+			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="max-height: 38rem;">
 	            @if ($errors)
 	                <div class="text-red rounded mt-2">
 	                    <span class="invalid-feedback" role="alert">
@@ -18,6 +20,7 @@
 	                        <strong class="block">{{ $errors->first('shortdesc') }}</strong>
 	                        <strong class="block">{{ $errors->first('desc') }}</strong>
 	                        <strong class="block">{{ $errors->first('price') }}</strong>
+	                        <strong class="block">{{ $errors->first('file') }}</strong>
 	                    </span>
 	                </div>
 	            @endif
@@ -34,6 +37,11 @@
 	            <div class="mt-5">
 	            	<p class="text-trans font-semibold text-base">Description</p>
 	            	<textarea name="desc" placeholder="Enter the description" class="mt-2 rounded h-24 w-full text-base border-b border-black"></textarea>	
+	            </div>
+
+	            <div class="mt-5">
+	            	<p class="text-trans font-semibold text-base">Image</p>
+	            	<input name="file" type="file" class="mt-2 rounded w-full text-base">
 	            </div>
 
 				<div class="mt-4">

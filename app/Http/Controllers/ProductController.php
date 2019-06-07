@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App;
+use Image;
 
 class ProductController extends Controller
 {
@@ -24,14 +25,21 @@ class ProductController extends Controller
             'shortdesc' => 'required',
             'desc' => 'required',
             'status' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'file' => 'required'
         ]);
+
         $product = new App\Product;
+
+
+        $file = base64_encode(file_get_contents($request->file('file')));
+
         $product->title = $request->title;
         $product->desc = $request->desc;
         $product->shortdesc = $request->shortdesc;
         $product->status = $request->status;
         $product->price = $request->price;
+        $product->src = $file;
         $product->save();
         return redirect(url('/admin'));
     }

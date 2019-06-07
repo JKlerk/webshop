@@ -40,3 +40,6 @@ Route::post('/admin/edit/{id}', 'ProductController@PostEdit')->middleware('auth'
 // Delete
 
 Route::get('/admin/delete/{id}', 'ProductController@delete')->middleware('auth', 'checklvl');
+
+
+Route::get('/image/{id}', 'ImageController@getImage')->middleware('auth');

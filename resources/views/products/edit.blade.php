@@ -41,6 +41,11 @@
 					<input name="price" value="{{$product->price}}" step="any" min="0" type="number" placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black">
 				</div>
 
+				<div class="mt-4">
+					<p class="text-trans font-semibold text-base">Image</p>
+					<img src="data:image/png;base64, {{ $product->src }} ">
+				</div>
+
             	<div class="absolute pin-t pin-r">
             		<a class="btn text-black text-xl w-8" href="https://webshop.test/admin"><i class="fas fa-arrow-left"></i></a>
             	</div>
