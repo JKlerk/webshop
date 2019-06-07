@@ -8,8 +8,9 @@ use App;
 
 class ProductController extends Controller
 {
-    public function view() {
-    	return view('products.view');
+    public function view($id) {
+        $product = App\Product::find($id);
+    	return view('products.view', compact('product'));
     }
 
     public function create() {

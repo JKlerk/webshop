@@ -14,14 +14,11 @@
 Auth::routes();
 
 Route::get('/', 'PageController@index');
-Route::get('/view', 'ProductController@view');
+Route::get('/view/{id}', 'ProductController@view');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
-Route::get('/admin/edit/{id}', [
-    'middleware' => 'auth',
-    'uses' => 'ProductController@edit'
-]);
+Route::get('/admin/edit/{id}', 'ProductController@edit')->middleware('auth', 'checklvl');
 
 
 Route::get('/admin', 'AdminController@index')->middleware('auth');
