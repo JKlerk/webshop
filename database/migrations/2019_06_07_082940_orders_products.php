@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Orders extends Migration
+class OrdersProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Orders extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('orders_products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_id');
-            $table->string('amount');
-            $table->string('status');
-            $table->timestamps();
+            $table->string('product_id');
+            $table->string('order_id');
         });
     }
 
