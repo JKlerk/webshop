@@ -10,7 +10,7 @@
 	<div class="min-h-screen md:flex">
 		<form autocomplete="off"  method="POST" action="{{ url('admin/edit/' . $product->id) }}" enctype="multipart/formdata" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
-			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="height: 500px;">
+			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="max-height: 32rem;">
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Title</p>
 					<input name="title" value="{{$product->title}}" placeholder="Enter the name" class="mt-2 w-full mb-2 border-b border-black">
@@ -18,13 +18,23 @@
 
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Short description</p>
-					<input name="title" value="{{$product->shortdesc}}" placeholder="Enter a short description" class="mt-2 w-full mb-2 border-b border-black">
+					<input name="shortdesc" value="{{$product->shortdesc}}" placeholder="Enter a short description" class="mt-2 w-full mb-2 border-b border-black">
 				</div>
 
 	            <div class="mt-5">
 	            	<p class="text-trans font-semibold text-base">Description</p>
 	            	<textarea name="desc" placeholder="Enter the description" class="mt-2 rounded h-24 w-full text-base border-b border-black">{{$product->desc}}</textarea>	
 	            </div>
+
+				<div class="mt-4">
+					<p class="text-trans font-semibold text-base">Status</p>
+					<select name="status" type="number" step="any" min="0" placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black bg-white">
+						<option disabled selected>Select status of product</option>
+						<option value="In Stock" @if($product->status == "In Stock") selected @endif>In Stock</option>
+						<option value="Out of Stock" @if($product->status == "Out of Stock") selected @endif>Out of Stock</option>
+						<option value="Discontinued" @if($product->status == "Discontinued") selected @endif>Discontinued</option>
+					</select>
+				</div>
 
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Price</p>

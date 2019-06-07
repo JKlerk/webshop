@@ -10,7 +10,7 @@
 	<div class="min-h-screen md:flex">
 		<form autocomplete="off"  method="POST" action="{{ url("/admin/create") }}" enctype="multipart/formdata" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
-			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="height: 500px;">
+			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="max-height: 32rem;">
 	            @if ($errors)
 	                <div class="text-red rounded mt-2">
 	                    <span class="invalid-feedback" role="alert">
@@ -35,6 +35,16 @@
 	            	<p class="text-trans font-semibold text-base">Description</p>
 	            	<textarea name="desc" placeholder="Enter the description" class="mt-2 rounded h-24 w-full text-base border-b border-black"></textarea>	
 	            </div>
+
+				<div class="mt-4">
+					<p class="text-trans font-semibold text-base">Status</p>
+					<select name="status" type="number" step="any" min="0" placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black bg-white">
+						<option disabled selected>Select status of product</option>
+						<option value="In Stock">In Stock</option>
+						<option value="Out of Stock">Out of Stock</option>
+						<option value="Discontinued">Discontinued</option>
+					</select>
+				</div>
 
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Price</p>

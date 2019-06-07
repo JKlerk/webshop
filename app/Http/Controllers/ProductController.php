@@ -23,12 +23,14 @@ class ProductController extends Controller
             'title' => 'required',
             'shortdesc' => 'required',
             'desc' => 'required',
+            'status' => 'required',
             'price' => 'required'
         ]);
         $product = new App\Product;
         $product->title = $request->title;
         $product->desc = $request->desc;
         $product->shortdesc = $request->shortdesc;
+        $product->status = $request->status;
         $product->price = $request->price;
         $product->save();
         return redirect(url('/admin'));
@@ -47,6 +49,7 @@ class ProductController extends Controller
         $product->desc = $request->shortdesc;
         $product->desc = $request->desc;
         $product->price = $request->price;
+        $product->status = $request->status;
         $product->save();
         return redirect(url('/admin'));
     }

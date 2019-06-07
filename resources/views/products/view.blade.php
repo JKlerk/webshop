@@ -20,6 +20,9 @@
 			</div>
 			<div class="w-1/2">
 				<p>{{$product->desc}}</p>
+				<p class="mt-2">Status:</p>
+				<p class="mb-2 text-green">{{$product->status}}</p>
+				<p class="mt-2">Sizes:</p>
 				<select class="bg-white border border-black w-1/2">
 					<option disabled selected>Select your size</option>
 					<option>Small</option>
