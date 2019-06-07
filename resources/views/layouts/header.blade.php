@@ -11,9 +11,9 @@
         <div class="p-2 flex justify-center w-full">
             <div class="container mx-auto max-w-xl my-auto flex my-auto">
                 <div class="flex justify-between w-1/4">
-                    <a class="text-black no-underline hover:underline my-auto" href="/login">Tab 1</a>
-                    <a class="text-black no-underline hover:underline my-auto" href="/login">Tab 2</a>
-                    <a class="text-black no-underline hover:underline my-auto" href="/login">Tab 3</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/') }}">Products</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/') }}">Tab 2</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/') }}">Tab 3</a>
                 </div>
                 <div class="flex flex-1 justify-end">
 
