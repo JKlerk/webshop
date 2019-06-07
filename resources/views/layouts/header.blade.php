@@ -7,7 +7,7 @@
 <div id="app">
 	
 
-    <nav class="p-5 border-black border flex mb-8">
+    <nav class="p-3 border-black border flex mb-8">
         <div class="p-2 flex justify-center w-full">
             <div class="container mx-auto max-w-xl my-auto flex my-auto">
                 <div class="flex justify-between w-1/4">
@@ -19,13 +19,13 @@
 
                 @if (Auth::check()) 
                     <div class="my-auto">
-                        <p class="text-white inline"><a class="text-black no-underline hover:underline" href="/profile">My profile</a></p>
-                        <a href="/logout" class="text-black hover:text-red no-underline"><i class="fas fa-sign-out-alt"></i></a>                             
+                        <p class="text-white inline"><a class="text-black mr-3 hover:underline" href="/profile">Welcome, {{ auth()->user()->name }}</a></p>
+                        {{-- <a href="/logout" class="text-black hover:text-red no-underline"><i class="fas fa-sign-out-alt"></i></a>    --}}                          
                     </div>
                 @else
                     <a class="text-black no-underline hover:underline my-auto mr-2" href="/login">Login/Register</a>
-                    <a class="bg-green text-white rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
                 @endif
+                    <a class="bg-green hover:bg-green-dark text-white rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
         </div>

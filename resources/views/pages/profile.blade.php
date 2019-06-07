@@ -33,11 +33,14 @@
 		            		<a class="bg-blue p-2 rounded text-white hover:shadow hover:bg-blue-dark no-underline hover:cursor-pointer" href="#" onclick="passwordChange()">Change password</a>
 	            			<a class="bg-red p-2 rounded text-white hover:shadow hover:bg-e-dark no-underline hover:bg-red-dark" href="{{ url('deleteuser/') }}">Delete account</a>
 	            		</div>
+                        
 	            		<div class="mt-5">
-	            		@if(auth()->user()->level == 1)
-	            			<a class="p-2 rounded hover:shadow border text-black border-1 border-black no-underline hover:underline" href="/admin/">Admin</a>
+                            @if(auth()->user()->level == 1)
+	            			    <a class="p-2 rounded hover:shadow border text-black border-1 border-black no-underline hover:underline" href="{{ url('admin/') }}">Admin</a>
+                            @endif
+                            <a class="p-2 rounded hover:shadow border text-black bg-black text-white no-underline hover:underline" href="{{ url('logout/') }}">Logout</a>
 	            		</div>
-	            		@endif
+	            		
 	            	</div>
             		<div id="pc" class="hidden w-1/5 animated">
             			<form class="flex" method="POST" action="{{ route('password.update') }}" autocomplete="off">
