@@ -18,13 +18,13 @@
                 </div>
     			<div class="flex flex-1 justify-end items-center">
                     <a href="{{ url('/admin/edit/' . $product->id)}}" class="no-underline p-4 border-r border-black text-black"><i class="fas fa-pencil-alt hover:underline"></i></a>
-                    <a href="{{ url('admin/delete/' . $product->id)}}" class="no-underline p-4 text-black hover:underline">X</a>
+                    <a href="{{ url('/admin/delete/' . $product->id)}}" class="no-underline p-4 text-black hover:underline">X</a>
                 </div>
             </div>
         @endforeach
 
         <div class="w-full flex flex-1 justify-end mb-2 mt-6">
-        	<a href="/admin/create" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Product</a>
+        	<a href="{{ url('/admin/create')}}" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Product</a>
         </div>
     </div>
 </body>
