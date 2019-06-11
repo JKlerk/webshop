@@ -23,7 +23,7 @@
                         {{-- <a href="/logout" class="text-black hover:text-red no-underline"><i class="fas fa-sign-out-alt"></i></a>    --}}                          
                     </div>
                 @else
-                    <a class="text-black no-underline hover:underline my-auto mr-2" href="/login">Login/Register</a>
+                    <a class="text-black no-underline hover:underline my-auto mr-2" href="{{ url('/login')}}">Login/Register</a>
                 @endif
                     <a class="bg-green hover:bg-green-dark text-white rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
                 </div>
