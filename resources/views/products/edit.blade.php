@@ -43,7 +43,7 @@
 
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Image</p>
-					<img src="data:image/png;base64, {{ $product->src }} ">
+					<img src="{{ url('/image/' . $product->id)}}">
 				</div>
 
             	<div class="absolute pin-t pin-r">
