@@ -25,7 +25,7 @@
                 @else
                     <a class="text-black no-underline hover:underline my-auto mr-2" href="{{ url('/login')}}">Login/Register</a>
                 @endif
-                    <a class="bg-green hover:bg-green-dark text-white rounded p-2 no-underline" href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a class="bg-green hover:bg-green-dark text-white rounded p-2 no-underline" href="{{ url('/shoppingcart')}}"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
         </div>

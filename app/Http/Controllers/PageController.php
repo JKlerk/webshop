@@ -17,4 +17,9 @@ class PageController extends Controller
     {
         return view('pages.profile');
     }
+
+    public function shoppingcart() {
+    	$products = App\Product::all();
+    	return view('pages.shoppingcart', compact('products'));
+    }
 }
