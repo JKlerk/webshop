@@ -19,7 +19,7 @@
 
                 @if (Auth::check()) 
                     <div class="my-auto">
-                        <p class="text-white inline"><a class="text-black mr-3 hover:underline" href="/profile">Welcome, {{ auth()->user()->name }}</a></p>
+                        <p class="text-white inline"><a class="text-black mr-3 hover:underline" href="{{ url('/profile')}}">Welcome, {{ auth()->user()->name }}</a></p>
                         {{-- <a href="/logout" class="text-black hover:text-red no-underline"><i class="fas fa-sign-out-alt"></i></a>    --}}                          
                     </div>
                 @else

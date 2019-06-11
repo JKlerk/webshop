@@ -17,8 +17,8 @@
                     </div>
                 </div>
     			<div class="flex flex-1 justify-end items-center">
-                    <a href="/admin/edit/{{$product->id}}" class="no-underline p-4 border-r border-black text-black"><i class="fas fa-pencil-alt hover:underline"></i></a>
-                    <a href="/admin/delete/{{$product->id}}" class="no-underline p-4 text-black hover:underline">X</a>
+                    <a href="{{ url('/admin/edit/' . $product->id)}}" class="no-underline p-4 border-r border-black text-black"><i class="fas fa-pencil-alt hover:underline"></i></a>
+                    <a href="{{ url('admin/delete/' . $product->id)}}" class="no-underline p-4 text-black hover:underline">X</a>
                 </div>
             </div>
         @endforeach
