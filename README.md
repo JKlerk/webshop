@@ -6,12 +6,6 @@
 4. cp .env.example .env
 5. php artisan key:generate
 
-- Test 1
-    - Test 2
-        - test 3
-            - test 3
-                - test 3
-                    - test 3
 
 # Sublime settings
 
@@ -20,22 +14,6 @@
 | Material Theme  | Color Sublime  |
 | Laravel Blade Higlighter  | Laravel 5 Snippets  |
 | Syntax Highlighting for Sass  | Sublime code Intel  |
-
-Keybindings (MacOs)
-```
-[
-	{ 
-    "keys": ["ctrl+shift+p"], 
-    "command": "show_overlay", 
-    "args": {"overlay": "command_palette"} 
-	},
-	{
-	"keys": ["ctrl+p"],
-	"command": "show_overlay",
-	"args": {"overlay": "goto", "show_files": true}
-	},
-]
-```
 
 User Settings (MacOs)
 ```
