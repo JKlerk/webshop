@@ -6,8 +6,16 @@
 <body class="animated fadeIn">
 
 	<div class="container mx-auto max-w-xl border ">
-        <h1 class="my-10 ml-3">Products</h1>
-        @foreach($products as $product)
+        <h1 class="my-10 ml-3">Shoppingcart</h1>
+{{--         {{ json_decode($items)}} --}}
+        @if($items != null)
+            @foreach ($items as $id => $item)
+                {{ $item->title }}
+            @endforeach
+        @else
+            <p>Shoppingcart is empty</p>
+        @endif
+{{--         @foreach($products as $product)
             <div class="flex border border-black mb-2 m-3">
                 <div class="bg-black flex p-4 w-full">
                     <p class="text-white">{{$product->title}} <span class="text-grey block">{{$product->shortdesc}}</span></p>
@@ -30,11 +38,7 @@
                     <a href="{{ url('/admin/delete/' . $product->id)}}" class="no-underline m-2 ml-1 p-2 text-black hover:underline">X</a>
                 </div>
             </div>
-        @endforeach
-
-        <div class="w-full flex flex-1 justify-end mb-2 mt-6">
-        	<a href="{{ url('/admin/create')}}" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Product</a>
-        </div>
+        @endforeach --}}
     </div>
 </body>
 </html>

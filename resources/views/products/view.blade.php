@@ -30,7 +30,7 @@
 					<option>Large</option>
 				</select>
 				<div class="w-full mt-5 flex justify-end">
-					<button class="p-2 border-black border-2 bg-white no-underline hover:shadow"><a class="hover:underline text-black" href="{{ url('view/' . $product->id) }}">+ Add to cart</a></button>
+					<button class="p-2 border-black border-2 bg-white no-underline hover:shadow"><a class="hover:underline text-black" href="{{ url('shoppingcart/add/' . $product->id) }}">+ Add to cart</a></button>
 				</div>
 			</div>
 

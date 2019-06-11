@@ -10,18 +10,41 @@ class CartController extends Controller
 {
     
     public function index() {
-    	$products = App\Product::all();
-    	return view('pages.shoppingcart', compact('products'));
 
-    	$data = Session::all();
+
+    $items = Session::get('cart.items');
+    return view('pages.shoppingcart', compact('items'));
+
+
+	
+	// $items = Session::get('cart.items');
+
+ //           // dd($product);
+ //        // return view('pages.shoppingcart', compact('items'));
+	// return $items;
+
     }
 
-    public function addCart(){
-    	
+	public function addCart($id)
+    {
+        $product = App\Product::find($id);
+
+    	$cart = [
+    		$id => [
+    			"id" => $product->id,
+				"title" => $product->title,
+				"price" => $product->price
+    		]
+    	];
+    	Session::push('cart.items', $cart);
+
+    	return redirect()->action('CartController@index');
     }
 
     public function removeCart(){
+    	Session::forget('cart.items');
 
+    	return redirect()->action('CartController@index');
     }
 
 }
