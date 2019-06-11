@@ -12,7 +12,7 @@
 			@csrf
 			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black">
             	<div class="absolute pin-t pin-r">
-            		<a class="btn text-black text-xl w-8" href="https://webshop.test/admin"><i class="fas fa-arrow-left"></i></a>
+            		<a class="btn text-black text-xl w-8" href="{{ url('/')}}"><i class="fas fa-arrow-left"></i></a>
             	</div>
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Title</p>

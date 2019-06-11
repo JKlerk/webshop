@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 @include('layouts.header')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <body class="animated fadeIn">

@@ -60,7 +60,7 @@
 				</div>
 
             	<div class="absolute pin-t pin-r">
-            		<a class="btn text-black text-xl w-8" href="https://webshop.test/admin"><i class="fas fa-arrow-left"></i></a>
+            		<a class="btn text-black text-xl w-8" href="{{ url('/')}}"><i class="fas fa-arrow-left"></i></a>
             	</div>
             	<div class="absolute pin-b pin-l">
             		<div class="w-12 text-center shadow h-1 my-2 bg-black"></div>
