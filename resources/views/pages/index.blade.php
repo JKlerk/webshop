@@ -6,17 +6,17 @@
 <body class="animated fadeIn">
 
 	<div class="container mx-auto max-w-xl">
-		<h1 class="">Products</h1>
+		<h1 class="">Pancakes</h1>
 
 		<div class="flex justify-center">
 			<div class="shadow w-full h-px my-2 bg-grey-darkest"></div>
 		</div>
 		<div class="flex flex-wrap">
 			@foreach($products as $product)
-				<div class="border border-grey-light mx-1 p-5 mb-5" style="width: 49%">
+				<div class="border border-grey-light mx-1 p-5 mb-3" style="width: 32.5%">
 					<h1>{{$product->title}}</h1>
 					<h2 class="text-grey mb-10">{{$product->shortdesc}}</h2>
-					<img src="{{ url('/image/' . $product->id)}}">
+					<img src="{{ url('/image/' . $product->id)}}" style="width: 500px; height: 200px;">
 					<div class="w-full mt-5 flex justify-end">
 						<button class="p-2 border-black border-2 bg-white no-underline hover:shadow"><a class="hover:underline text-black" href="{{ url('view/' . $product->id) }}">Read more</a></button>
 					</div>
