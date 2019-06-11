@@ -2,7 +2,7 @@
 <form method="POST" action="{{ route('register') }}" autocomplete="off">
     @csrf
     <div class="animated fadeIn container mx-auto rounded shadow border border-grey p-10" style="max-width: 400px;">
-        <a class="text-black no-underline hover:underline" href="/"><i class="fas fa-arrow-left"></i></a>
+        <a class="text-black no-underline hover:underline" href="{{ url('/')}}"><i class="fas fa-arrow-left"></i></a>
         <div class="text-white">
             <h1 class="text-3xl text-black mb-5 text-center">Register page</h1>
             @if ($errors)
@@ -19,7 +19,7 @@
             <input class="border w-full p-2 text-xl" type="password" placeholder="Password" name="password"/>
             <input class="border w-full p-2 text-xl" type="password" placeholder="Confirm password" name="password_confirmation" required/>
             <button type="submit" class="text-xl mt-4 w-full p-3 rounded shadow text-white bg-black">Register</button>
-            <p class="text-grey mt-5">Already have an account? <a href="/login" class="text-blue no-underline hover:underline">Click here</a></p>
+            <p class="text-grey mt-5">Already have an account? <a href="{{ url('/login')}}" class="text-blue no-underline hover:underline">Click here</a></p>
         </div>
     </div>
 </form>
