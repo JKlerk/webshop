@@ -7,10 +7,13 @@
 
 	{{-- Black bar --}}
 	
-	<div class="min-h-screen md:flex">
+	<div class="md:flex">
 		<form autocomplete="off"  method="POST" action="{{ url('admin/edit/' . $product->id) }}" enctype="multipart/formdata" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
-			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="max-height: 32rem;">
+			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black">
+            	<div class="absolute pin-t pin-r">
+            		<a class="btn text-black text-xl w-8" href="https://webshop.test/admin"><i class="fas fa-arrow-left"></i></a>
+            	</div>
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Title</p>
 					<input name="title" value="{{$product->title}}" placeholder="Enter the name" class="mt-2 w-full mb-2 border-b border-black">
@@ -43,16 +46,14 @@
 
 				<div class="mt-4">
 					<p class="text-trans font-semibold text-base">Image</p>
-					<img src="{{ url('/image/' . $product->id)}}">
+					<img class="w-1/2" src="{{ url('/image/' . $product->id)}}">
+					<input name="file" type="file" class="mt-2 rounded w-full text-base">
 				</div>
 
-            	<div class="absolute pin-t pin-r">
-            		<a class="btn text-black text-xl w-8" href="https://webshop.test/admin"><i class="fas fa-arrow-left"></i></a>
-            	</div>
-            	<div class="absolute pin-b pin-l">
+            	<div class="mt-5">
             		<div class="w-12 text-center shadow h-1 my-2 bg-black"></div>
             		<div class="flex">
-            			<button type="submit" class="border-t border-r border-black p-2 text-black text-center text-xl w-32 hover:underline" href="#">Add</button>
+            			<button type="submit" class="border border-black p-2 text-black text-center text-xl w-32 hover:underline" href="#">Add</button>
             		</div>
             	</div>
             </div>
