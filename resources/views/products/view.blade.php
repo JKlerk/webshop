@@ -13,7 +13,7 @@
 		</div>
 
 		<div class="flex justify-center">
-			<div class="flex bg-grey-lightest w-1/2 mx-2 p-5 border border-black">
+			<div class="flex border-grey w-1/2 mx-2 p-5 border">
 			<div class="w-1/2">
 				<h1>{{$product->title}}</h1>
 				<h2 class="text-grey mb-10">{{$product->shortdesc}}</h2>
