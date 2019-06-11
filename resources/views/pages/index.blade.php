@@ -18,7 +18,7 @@
 					<h2 class="text-grey mb-10">{{$product->shortdesc}}</h2>
 					<img src="/image/{{ $product->id }}">
 					<div class="w-full mt-5 flex justify-end">
-						<button class="p-2 border-black border-2  bg-white no-underline hover:shadow"><a class="hover:underline text-black" href="{{ url('view/' . $product->id) }}">Read more</a></button>
+						<button class="p-2 border-black border-2 bg-white no-underline hover:shadow"><a class="hover:underline text-black" href="{{ url('view/' . $product->id) }}">Read more</a></button>
 					</div>
 				</div>
 			@endforeach
