@@ -22,4 +22,16 @@ class PageController extends Controller
     	$products = App\Product::all();
     	return view('pages.shoppingcart', compact('products'));
     }
+
+    public function admin() {
+
+    	$products = App\Product::all();
+
+    	if (auth()->user()->level == 1){
+	    	return view('pages.admin', compact('products'));
+    	} else{
+    		return redirect()->action('PageController@index');
+    	}
+
+    }
 }

@@ -20,7 +20,7 @@ Route::get('/profile', 'PageController@profile');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
-Route::get('/admin', 'AdminController@index')->middleware('auth');
+Route::get('/admin', 'PageController@admin')->middleware('auth', 'checklvl');
 
 // Create
 Route::get('/admin/create', 'ProductController@create')->middleware('auth', 'checklvl');
