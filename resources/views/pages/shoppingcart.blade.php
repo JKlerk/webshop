@@ -31,6 +31,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="flex justify-end mt-5">
+                <a class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
+            </div>
         @else
             <p>Shoppingcart is empty</p>
         @endif
