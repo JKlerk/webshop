@@ -12,6 +12,8 @@ class CartController extends Controller
     public function index() {
 
 	    $items = Session::get('cart.items');
+
+        // dd($items);
 	    return view('pages.shoppingcart', compact('items'));
 
     }
@@ -21,10 +23,11 @@ class CartController extends Controller
         $product = App\Product::find($id);
 
     	$cart = [
-    			'id' => $product->id,
-				'title' => $product->title,
-				'shortdesc' => $product->shortdesc,
-				'price' => $product->price
+            'id' => $product->id,
+            'title' => $product->title,
+            'quantity' => 1,
+            'shortdesc' => $product->shortdesc,
+            'price' => $product->price
     	];
 
     	Session::push('cart.items', $cart);
@@ -34,9 +37,13 @@ class CartController extends Controller
 
     public function removeCart($id){
 
-    	Session::forget('cart.items', $id);
+    	Session::forget('cart.items');
 
     	return redirect()->action('CartController@index');
+    }
+
+    public function updateCart($id){
+        //
     }
 
 }

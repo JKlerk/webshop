@@ -4,7 +4,6 @@
 	@include('layouts.header')
 </head>
 <body class="animated fadeIn">
-
 	<div class="container mx-auto max-w-xl border ">
         <h1 class="my-10 ml-3">Shoppingcart</h1>
         @if($items != null)
@@ -31,7 +30,19 @@
                     </div>
                 </div>
             @endforeach
-            <div class="flex justify-end mt-5">
+            @php
+                if(count($items) != 1)
+                {
+                    $price = $item['price'];
+                    foreach ($items as $item) {
+                        $price = $price + $item['price'];
+                    }               
+                } else{
+                    $price = $item['price'];
+                }
+            @endphp
+            <div class="flex justify-end mt-5 items-center">
+                <p class="border-b border-black mr-4">Total: ${{ $price }}</p>
                 <a class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
             </div>
         @else
