@@ -42,7 +42,6 @@
             @endphp
             <div class="flex justify-end mt-5 items-center">
                 <p class="border-b border-black mr-4">Total: ${{ $price }}</p>
-        {{--         <button type="submit" class="py-2 px-10 m-2 rounded border border-black hover:underline text-black">Update cart</button> --}}
                 <a class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
             </div>
         @else
@@ -50,11 +49,13 @@
         @endif
     </div>
     <script type="text/javascript">
-        @foreach($items as $item)
-        function submit{{ $item['id'] }}(){
-            document.getElementById("{{ $item['id'] }}").submit();
-        }
-        @endforeach
+        @if($items != null)
+            @foreach($items as $item)
+            function submit{{ $item['id'] }}(){
+                document.getElementById("{{ $item['id'] }}").submit();
+            }
+            @endforeach
+        @endif
     </script>
 </body>
 </html>
