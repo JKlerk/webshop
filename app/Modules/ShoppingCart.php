@@ -15,12 +15,17 @@ class ShoppingCart
     public static function addItem($cart)
     {
         if ($cart) {
-            session()->push('cart.items', $cart);
+            Session::push('cart.items', $cart);
 
             return true;
         }
 
         return false;
+    }
+
+    public static function updateItem($cart){
+        Session::pull('cart.items', $cart);
+        Session::push('cart.items', $cart);
     }
 
     public static function clearCart()

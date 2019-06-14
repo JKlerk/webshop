@@ -16,16 +16,15 @@
                         </div>
                     </div>
         			<div class="flex flex-1 justify-end items-center">
-        				<select class="bg-white border border-black ml-1">
-        					<option value="1">1</option>
-        					<option value="2">2</option>
-        					<option value="3">3</option>
-        					<option value="4">4</option>
-        					<option value="5">5</option>
-        					<option value="6">6</option>
-        					<option value="7">7</option>
-        					<option value="8">8</option>
-        				</select>
+                        <form id="{{ $item['id'] }}" autocomplete="off"  method="POST" action="{{ url('/shoppingcart/update/' . $item['id']) }}" enctype="multipart/form-data" class="flex w-full justify-center" _lpchecked="1">
+            				@csrf
+                            <select name="quantity" onchange="submit{{ $item['id'] }}()" class="bg-white border border-black ml-1">
+                                @for($i = 1; $i <= 10; $i++)
+                                    <option @if($item['quantity'] == $i) selected @endif value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+            				</select>
+                            <noscript><input type="submit" value="Submit"></noscript>
+                        </form>
                         <a href="{{ url('/shoppingcart/remove/' . $item['id'])}}" class="no-underline m-2 ml-1 p-2 text-black hover:underline">X</a>
                     </div>
                 </div>
@@ -43,11 +42,19 @@
             @endphp
             <div class="flex justify-end mt-5 items-center">
                 <p class="border-b border-black mr-4">Total: ${{ $price }}</p>
+        {{--         <button type="submit" class="py-2 px-10 m-2 rounded border border-black hover:underline text-black">Update cart</button> --}}
                 <a class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
             </div>
         @else
             <p>Shoppingcart is empty</p>
         @endif
     </div>
+    <script type="text/javascript">
+        @foreach($items as $item)
+        function submit{{ $item['id'] }}(){
+            document.getElementById("{{ $item['id'] }}").submit();
+        }
+        @endforeach
+    </script>
 </body>
 </html>

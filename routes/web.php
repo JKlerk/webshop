@@ -36,4 +36,5 @@ Route::get('/admin/delete/{id}', 'ProductController@delete')->middleware('auth',
 // Shoppingcart
 Route::get('/shoppingcart', 'CartController@index')->middleware('auth');
 Route::post('/shoppingcart/add/{id}', 'CartController@addCart')->middleware('auth');
+Route::post('/shoppingcart/update/{id}', 'CartController@updateCart')->middleware('auth');
 Route::get('/shoppingcart/remove/{id}', 'CartController@removeCart')->middleware('auth');

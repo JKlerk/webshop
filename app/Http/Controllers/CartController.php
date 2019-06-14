@@ -15,7 +15,6 @@ class CartController extends Controller
 	    $items = ShoppingCart::getItems();
 
 	    return view('pages.shoppingcart', compact('items'));
-
     }
 
 	public function addCart(Request $request, $id)
@@ -44,8 +43,22 @@ class CartController extends Controller
     	return redirect()->action('CartController@index');
     }
 
-    public function updateCart($id){
-        //
+    public function updateCart(Request $request, $id){
+        $product = App\Product::find($id);
+        
+        $cart = [
+            'id' => $product->id,
+            'title' => $product->title,
+            'quantity' => $request->quantity,
+            'shortdesc' => $product->shortdesc,
+            'price' => $product->price,
+            'selectedSize' => $request->size,
+            'selectTopping' => $request->topping,
+        ];
+
+        ShoppingCart::updateItem($cart);
+
+        return redirect()->action('CartController@index');
     }
 
 }
