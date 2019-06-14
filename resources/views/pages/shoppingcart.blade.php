@@ -31,7 +31,6 @@
                 </div>
             @endforeach
             @php
-            dd($items);
                 if(count($items) != 1)
                 {
                     $price = $item['price'];

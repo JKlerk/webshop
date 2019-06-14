@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Modules\ShoppingCart;
 use App;
-use Session;
-use Cart;
 
 class CartController extends Controller
 {
     
     public function index() {
 
-	    $items = Session::get('cart.items');
+	    $items = ShoppingCart::getItems();
 
 	    return view('pages.shoppingcart', compact('items'));
 
@@ -32,8 +31,8 @@ class CartController extends Controller
             'selectTopping' => $request->topping,
     	];
 
-    	Session::push('cart.items', $cart);
-        // dd($cart);
+    	ShoppingCart::addItem($cart);
+
     	return redirect()->action('CartController@index');
     }
 
