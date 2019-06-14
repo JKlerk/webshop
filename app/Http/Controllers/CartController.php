@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Modules\ShoppingCart;
 use App;
+use Session;
 
 class CartController extends Controller
 {
