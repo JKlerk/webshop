@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use Session;
+use Cart;
 
 class CartController extends Controller
 {
@@ -13,12 +14,11 @@ class CartController extends Controller
 
 	    $items = Session::get('cart.items');
 
-        // dd($items);
 	    return view('pages.shoppingcart', compact('items'));
 
     }
 
-	public function addCart($id)
+	public function addCart(Request $request, $id)
     {
         $product = App\Product::find($id);
 
@@ -27,11 +27,13 @@ class CartController extends Controller
             'title' => $product->title,
             'quantity' => 1,
             'shortdesc' => $product->shortdesc,
-            'price' => $product->price
+            'price' => $product->price,
+            'selectedSize' => $request->size,
+            'selectTopping' => $request->topping,
     	];
 
     	Session::push('cart.items', $cart);
-
+        // dd($cart);
     	return redirect()->action('CartController@index');
     }
 
