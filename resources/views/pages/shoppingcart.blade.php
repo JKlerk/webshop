@@ -45,7 +45,7 @@
                 <a class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
             </div>
         @else
-            <p>Shoppingcart is empty</p>
+            <p class="text-center mb-20">Shoppingcart is empty</p>
         @endif
     </div>
     <script type="text/javascript">
