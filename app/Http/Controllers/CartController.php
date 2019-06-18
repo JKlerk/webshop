@@ -21,18 +21,24 @@ class CartController extends Controller
     {
         $product = App\Product::find($id);
 
+
+        $request->validate([
+            'selectedSize' => 'required',
+            'selectedTopping' => 'required'
+        ]);
+
     	$cart = [ $id = [
                 'id' => $product->id,
                 'title' => $product->title,
                 'quantity' => 1,
                 'shortdesc' => $product->shortdesc,
                 'price' => $product->price,
-                'selectedSize' => $request->size,
-                'selectTopping' => $request->topping,
+                'selectedSize' => $request->selectedSize,
+                'selectedTopping' => $request->selectedTopping,
             ]
         ];
 
-    	$result = ShoppingCart::addItem($cart, $product);
+        $result = ShoppingCart::addItem($cart, $product);
 
         if ($result) {
             return redirect()->action('CartController@index');

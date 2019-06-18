@@ -21,15 +21,30 @@ class ShoppingCart
     {
         $specific = static::getItem($product->id);
 
-        if (!Session::has('cart.' . key($specific))) {
-            if ($cart) {
-                Session::push('cart', $cart);
+        // if ($specific) {
+        //     if (!Session::has('cart.' . key($specific))) {
+        //         if ($cart) {
+        //             Session::push('cart', $cart);
+        //         return true;
+        //     }
+        // }
+        // } else {
+        // return false;            
+        // }
 
-                return true;
+        if (!$specific) {
+            Session::push('cart', $cart);
+            return true;
+        } else {
+            if (!Session::has('cart.' . key($specific))) {
+                if ($cart) {
+                    Session::push('cart', $cart);
+                    return true;
+                }
+            } else {
+                return false;
             }
         }
-
-        return false;
     }
 
     public static function updateItem($id, $request) {
@@ -44,8 +59,8 @@ class ShoppingCart
                 'quantity' => $request->quantity,
                 'shortdesc' => $product->shortdesc,
                 'price' => $product->price,
-                'selectedSize' => $request->size,
-                'selectTopping' => $request->topping,
+                'selectedSize' => $request->selectedSize,
+                'selectedTopping' => $request->selectedTopping,
             ]
         ];
 
@@ -63,6 +78,10 @@ class ShoppingCart
         static::$id = $id;
 
         $items = static::getItems();
+
+        if (!$items) {
+            return null;
+        }
 
         $specific = Arr::where($items, function ($value, $key) {
             return $value[0]['id'] == static::$id;

@@ -4,15 +4,15 @@
 	@include('layouts.header')
 </head>
 <body class="animated fadeIn">
-
-	{{-- Black bar --}}
-	
 	<div class="min-h-screen md:flex">
 		<form autocomplete="off"  method="POST" action="{{ url("/admin/create") }}" enctype="multipart/form-data" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
 			{{csrf_field()}}
 
-			<div class="antialiased p-5 w-1/4 rounded border-b shadow mt-4 relative border border-black" style="max-height: 38rem;">
+			<div class="antialiased p-5 w-1/4 border-b shadow mt-4 relative border border-black" style="max-height: 38rem;">
+            	<div class="absolute pin-t pin-r">
+            		<a class="btn text-black text-xl w-8" href="{{ url()->previous() }}"><i class="fas fa-arrow-left"></i></a>
+            	</div>
 	            @if ($errors)
 	                <div class="text-red rounded mt-2">
 	                    <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
 
 	            <div class="mt-5">
 	            	<p class="text-trans font-semibold text-base">Image</p>
-	            	<input name="file" type="file" class="mt-2 rounded w-full text-base">
+	            	<input name="file" type="file" class="mt-2 w-full text-base">
 	            </div>
 
 				<div class="mt-4">
@@ -58,14 +58,10 @@
 					<p class="text-trans font-semibold text-base">Price</p>
 					<input name="price" type="number" step="any" min="0" placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black">
 				</div>
-
-            	<div class="absolute pin-t pin-r">
-            		<a class="btn text-black text-xl w-8" href="{{ url('/')}}"><i class="fas fa-arrow-left"></i></a>
-            	</div>
-            	<div class="absolute pin-b pin-l">
+            	<div class="mt-5">
             		<div class="w-12 text-center shadow h-1 my-2 bg-black"></div>
             		<div class="flex">
-            			<button type="submit" class="border-t border-r border-black p-2 text-black text-center text-xl w-32 hover:underline" href="#">Add</button>
+            			<button type="submit" class="border border-black p-2 text-black text-center text-xl w-32 hover:underline" href="#">Add</button>
             		</div>
             	</div>
             </div>

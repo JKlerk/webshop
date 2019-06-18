@@ -6,7 +6,19 @@
 <body class="animated fadeIn">
 	<div class="container mx-auto max-w-xl">
 		@if (session()->has('error'))
-            <div class="bg-red text-white font-semibold p-3 leading-normal text-sm m-3">{{ session()->get('error') }}</div>
+			<div class="flex justify-center">
+            	<div class="bg-red w-2/3 text-white font-semibold p-3 leading-normal text-sm">
+            		<p>{{ session()->get('error') }}</p>
+            	</div>
+        	</div>
+        @endif
+		@if (!$errors->isEmpty())
+			<div class="flex justify-center">
+	            <div class="bg-red w-2/3 text-white font-semibold p-3 leading-normal text-sm">
+	            	<p>{{ $errors->first('selectedSize') }}</p>
+	            	<p>{{ $errors->first('selectedTopping') }}</p>
+	            </div>
+	        </div>
         @endif
 		<form autocomplete="off" method="POST" action="{{ url('/shoppingcart/add/' . $product->id) }}" enctype="multipart/form-data" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
@@ -23,14 +35,14 @@
 						<p class="mt-2">Status:</p>
 						<p class="mb-2 text-green">{{$product->status}}</p>
 						<p class="mt-2">Sizes:</p>
-						<select name="size" class="bg-white border border-black w-full">
+						<select name="selectedSize" class="bg-white border border-black w-full">
 							<option disabled selected>Select your size</option>
 							<option value="Small">Small</option>
 							<option value="Medium">Medium</option>
 							<option value="Large">Large</option>
 						</select>
 						<p class="mt-2">Toppings:</p>
-						<select name="topping" class="bg-white border border-black w-full">
+						<select name="selectedTopping" class="bg-white border border-black w-full">
 							<option disabled selected>Select your topping</option>
 							<option value="Chocolate">Chocolate</option>
 							<option value="Sugar">Sugar</option>
