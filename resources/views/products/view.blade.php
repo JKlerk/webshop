@@ -37,8 +37,7 @@
 							<option value="Cream">Cream</option>
 						</select>
 						<div class="w-full mt-4 flex justify-end">
-							<button type="submit" class="p-2 border-black border-2 bg-black hover:shadow hover:underline text-white">+ Add to cart</button>
-								{{-- <a class="hover:underline text-white" href="{{ url('shoppingcart/add/' . $product->id) }}">+ Add to cart</a> --}}
+							<button type="submit" class="p-2 mt-16 border-black border-2 hover:shadow hover:underline">+ Add to cart</button>
 						</div>
 					</div>
 				</div>
