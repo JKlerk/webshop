@@ -21,42 +21,38 @@ class CartController extends Controller
     {
         $product = App\Product::find($id);
 
-    	$cart = [
-            'id' => $product->id,
-            'title' => $product->title,
-            'quantity' => 1,
-            'shortdesc' => $product->shortdesc,
-            'price' => $product->price,
-            'selectedSize' => $request->size,
-            'selectTopping' => $request->topping,
-    	];
+    	$cart = [ $id = [
+                'id' => $product->id,
+                'title' => $product->title,
+                'quantity' => 1,
+                'shortdesc' => $product->shortdesc,
+                'price' => $product->price,
+                'selectedSize' => $request->size,
+                'selectTopping' => $request->topping,
+            ]
+        ];
 
-    	ShoppingCart::addItem($cart);
+    	$result = ShoppingCart::addItem($cart, $product);
 
-    	return redirect()->action('CartController@index');
+        if ($result) {
+            return redirect()->action('CartController@index');
+        } else {
+            session()->flash('error', 'You already have this product in your shopping cart.');
+
+            return redirect()->back();
+        }
+
     }
 
     public function removeCart($id){
 
-    	Session::forget('cart.items');
+    	ShoppingCart::removeItem($id);
 
-    	return redirect()->action('CartController@index');
+        return redirect()->back();
     }
 
     public function updateCart(Request $request, $id){
-        $product = App\Product::find($id);
-        
-        $cart = [
-            'id' => $product->id,
-            'title' => $product->title,
-            'quantity' => $request->quantity,
-            'shortdesc' => $product->shortdesc,
-            'price' => $product->price,
-            'selectedSize' => $request->size,
-            'selectTopping' => $request->topping,
-        ];
-
-        ShoppingCart::updateItem($cart);
+        ShoppingCart::updateItem($id, $request);
 
         return redirect()->action('CartController@index');
     }

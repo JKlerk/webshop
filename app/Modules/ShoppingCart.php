@@ -1,55 +1,81 @@
 <?php
 
 namespace App\Modules;
+
 use Session;
+use Illuminate\Support\Arr;
+use App\Product;
 
 class ShoppingCart
 {
+    public static $id;
+
     public static function getItems()
     {
-        $items = Session::get('cart.items');
+        $items = Session::get('cart');
 
         return $items;
     }
 
-    public static function addItem($cart)
+    public static function addItem($cart, $product)
     {
-        if ($cart) {
-            Session::push('cart.items', $cart);
+        $specific = static::getItem($product->id);
 
-            return true;
+        if (!Session::has('cart.' . key($specific))) {
+            if ($cart) {
+                Session::push('cart', $cart);
+
+                return true;
+            }
         }
 
         return false;
     }
 
-    public static function updateItem($cart){
-        Session::pull('cart.items', $cart);
-        Session::push('cart.items', $cart);
+    public static function updateItem($id, $request) {
+       $specific = static::getItem($id);
+       $product = Product::find($id);
+
+       Session::forget('cart.' . key($specific));
+
+       $cart = [ $id = [
+                'id' => $product->id,
+                'title' => $product->title,
+                'quantity' => $request->quantity,
+                'shortdesc' => $product->shortdesc,
+                'price' => $product->price,
+                'selectedSize' => $request->size,
+                'selectTopping' => $request->topping,
+            ]
+        ];
+
+        Session::push('cart', $cart);
+
     }
 
     public static function clearCart()
     {
-        Session::forget('cart.items');
+        Session::forget('cart');
+    }
+
+    public static function getItem($id)
+    {
+        static::$id = $id;
+
+        $items = static::getItems();
+
+        $specific = Arr::where($items, function ($value, $key) {
+            return $value[0]['id'] == static::$id;
+        });
+
+        return $specific;
     }
 
     public static function removeItem($id)
-    {
-        $items = static::getItems();
+    {  
+        $specific = static::getItem($id);
 
-        if ($items == null){
-            return false;
-        }
-
-        for ($i = 0; $i <= count($items); $i++) {
-            // return $items;
-            if ($items[$i]['id'] == $id) {  
-
-                Session::pull('cart.items', $i);
-                unset( $items[$i]);
-                
-            }
-        }
+        Session::forget('cart.' . key($specific));
 
     }
 }
