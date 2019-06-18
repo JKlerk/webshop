@@ -5,13 +5,9 @@
 </head>
 <body class="animated fadeIn">
 	<div class="container mx-auto max-w-xl">
-		<h1 class="">Products</h1>
 		@if (session()->has('error'))
-				            <div class="bg-red text-white font-semibold p-3 leading-normal text-xs m-3">{{ session()->get('error') }}</div>
-				        @endif
-		<div class="flex justify-center">
-			<div class="shadow w-full h-px my-2 bg-grey-darkest"></div>
-		</div>
+            <div class="bg-red text-white font-semibold p-3 leading-normal text-sm m-3">{{ session()->get('error') }}</div>
+        @endif
 		<form autocomplete="off" method="POST" action="{{ url('/shoppingcart/add/' . $product->id) }}" enctype="multipart/form-data" class="flex w-full justify-center" _lpchecked="1">
 			@csrf
 			<div class="flex justify-center">

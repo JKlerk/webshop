@@ -57,4 +57,10 @@ class CartController extends Controller
         return redirect()->action('CartController@index');
     }
 
+    public function pay()
+    {
+        $items = ShoppingCart::getItems();
+        return view('pages.pay', compact('items'));
+    }
+
 }

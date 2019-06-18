@@ -41,7 +41,7 @@
             @endphp
             <div class="flex justify-end mt-5 items-center">
                 <p class="border-b border-black mr-4">Total: ${{ $price }}</p>
-                <a class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
+                <a href="{{ url('/shoppingcart/pay') }}" class="py-2 px-10 m-2 rounded border border-black hover:underline text-black" href="#">Pay</a>
             </div>
         @else
             <p class="text-center mb-20">Shoppingcart is empty</p>
