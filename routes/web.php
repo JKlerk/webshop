@@ -40,3 +40,5 @@ Route::post('/shoppingcart/update/{id}', 'CartController@updateCart')->middlewar
 Route::get('/shoppingcart/remove/{id}', 'CartController@removeCart')->middleware('auth');
 
 Route::get('/shoppingcart/pay', 'CartController@pay')->middleware('auth');
+
+Route::get('/shoppingcart/order', 'OrderController@index')->middleware('auth');

@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="flex justify-end">
-            <a href="{{ url('/shoppingcart/pay') }}" class="py-2 px-10 rounded border border-black hover:underline text-black" href="#">Continue</a>
+            <a href="{{ url('/shoppingcart/order') }}" class="py-2 px-10 rounded border border-black hover:underline text-black" href="#">Continue</a>
         </div>
     </div>
 </body>

@@ -20,7 +20,6 @@ class Products extends Migration
             $table->string('shortdesc');
             $table->string('desc');
             $table->string('status')->default('In Stock');
-            $table->string('size')->nullable();
             $table->string('price');
             $table->timestamps();
         });

@@ -6,22 +6,19 @@
             	<div class="flex m-10 justify-center w-full">
             		<div class="w-1/5 border border-1 rounded">
             			<h3 class="text-center m-5">Orders</h3>
+                        @foreach (auth()->user()->orders as $order)
             			<div class="flex mb-3 border-b border-t border-1">
 	            			<div class="w-1/2 my-auto ml-2">
-	            				<p class="">Order 1</p>
+	            				<p class="">Order {{ $order->id }}</p>
 	            			</div>
-	            			<div class="flex flex-1 justify-end mr-2">
-	            				<p class="bg-green rounded text-white p-2 my-1">Finished</p>
-	            			</div>
-            			</div>
-          			<div class="flex mb-3 border-b border-t border-1">
-	            			<div class="w-1/2 my-auto ml-2">
-	            				<p class="">Order 1</p>
-	            			</div>
-	            			<div class="flex flex-1 justify-end mr-2">
-	            				<p class="bg-orange rounded text-white p-2 my-1">Waiting..</p>
+	            			<div class="flex flex-1 justify-end m-2">
+                                <div class="my-auto mr-3">
+                                    &euro; {{ $order->amount / 100 }}
+                                </div>
+	            				<p class="bg-green text-xs font-bold my-auto rounded text-white p-2 my-1">{{ strtoupper($order->status) }}</p>
 	            			</div>
             			</div>
+                        @endforeach
             		</div>
             		<div class="w-1/5 mx-5">
 	            		<p>Your name</p>
