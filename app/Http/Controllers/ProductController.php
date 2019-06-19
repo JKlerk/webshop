@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function create() {
 		return view('products.create');
     }
-
+    
     public function PostCreate(Request $request)
     {
         $request->validate([

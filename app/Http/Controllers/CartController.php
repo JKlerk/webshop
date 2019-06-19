@@ -27,7 +27,8 @@ class CartController extends Controller
             'selectedTopping' => 'required'
         ]);
 
-    	$cart = [ $id = [
+    	$cart = [ 
+            $id = [
                 'id' => $product->id,
                 'title' => $product->title,
                 'quantity' => 1,

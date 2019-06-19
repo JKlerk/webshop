@@ -21,17 +21,6 @@ class ShoppingCart
     {
         $specific = static::getItem($product->id);
 
-        // if ($specific) {
-        //     if (!Session::has('cart.' . key($specific))) {
-        //         if ($cart) {
-        //             Session::push('cart', $cart);
-        //         return true;
-        //     }
-        // }
-        // } else {
-        // return false;            
-        // }
-
         if (!$specific) {
             Session::push('cart', $cart);
             return true;
@@ -48,19 +37,22 @@ class ShoppingCart
     }
 
     public static function updateItem($id, $request) {
-       $specific = static::getItem($id);
-       $product = Product::find($id);
+        $specific = static::getItem($id);
+        $product = Product::find($id);
 
-       Session::forget('cart.' . key($specific));
+        $old = Session::get('cart.' . key($specific))[0];
 
-       $cart = [ $id = [
+        Session::forget('cart.' . key($specific));
+
+        $cart = [ 
+            $id = [
                 'id' => $product->id,
                 'title' => $product->title,
                 'quantity' => $request->quantity,
                 'shortdesc' => $product->shortdesc,
                 'price' => $product->price,
-                'selectedSize' => $request->selectedSize,
-                'selectedTopping' => $request->selectedTopping,
+                'selectedSize' => $old['selectedSize'],
+                'selectedTopping' => $old['selectedTopping'],
             ]
         ];
 
