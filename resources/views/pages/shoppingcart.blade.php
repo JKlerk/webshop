@@ -9,11 +9,11 @@
 
         @if($items != null)
             @foreach($items as $id => $item)
-                <div class="flex border border-black mb-2 m-3">
-                    <div class="bg-black flex p-4 w-full">
-                        <p class="text-white">{{$item[0]['title']}} <span class="text-grey block">{{$item[0]['shortdesc']}}</span></p>
+                <div class="flex border-b border-grey mb-2 m-3">
+                    <div class="flex p-4 w-full">
+                        <p class="text-black">{{$item[0]['title']}} <span class="text-grey block">{{$item[0]['shortdesc']}}</span></p>
                         <div class="flex flex-1 justify-end items-center">
-                            <p class="text-white">${{$item[0]['price']}}</p>
+                            <p class="text-black">${{$item[0]['price']}}</p>
                         </div>
                     </div>
         			<div class="flex flex-1 justify-end items-center">
