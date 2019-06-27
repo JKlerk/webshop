@@ -21,8 +21,9 @@ class PageController extends Controller
     public function admin() {
 
     	$products = App\Product::all();
+        $categories = App\Category::all();
 
-    	return view('pages.admin', compact('products'));
+    	return view('pages.admin', compact('products','categories'));
 
     }
 }

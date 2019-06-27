@@ -10,12 +10,15 @@ use Image;
 class ProductController extends Controller
 {
     public function view($id) {
-        $product = App\Product::find($id);
+
+        $product = App\Product::where('id', $id)->with('categories')->first();
     	return view('products.view', compact('product'));
     }
 
     public function create() {
-		return view('products.create');
+        $categories = App\Category::all();
+
+        return view('products.create', compact('categories'));
     }
     
     public function PostCreate(Request $request)
@@ -31,7 +34,6 @@ class ProductController extends Controller
 
         $product = new App\Product;
 
-
         $file = base64_encode(file_get_contents($request->file('file')));
 
         $product->title = $request->title;
@@ -41,6 +43,11 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->src = $file;
         $product->save();
+
+        foreach ($request->category as $category) {
+            $product->categories()->attach($category);
+        }
+
         return redirect(url('/admin'));
     }
 

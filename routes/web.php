@@ -22,16 +22,25 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
 Route::get('/admin', 'PageController@admin')->middleware('auth', 'checklvl');
 
-// Create
+// Create Product
 Route::get('/admin/create', 'ProductController@create')->middleware('auth', 'checklvl');
 Route::post('/admin/create', 'ProductController@PostCreate')->middleware('auth', 'checklvl');
 
-// Edit
+// Edit Product
 Route::get('/admin/edit/{id}', 'ProductController@edit')->middleware('auth', 'checklvl');
 Route::post('/admin/edit/{id}', 'ProductController@PostEdit')->middleware('auth', 'checklvl');
 
+// Create Category
+Route::get('/admin/create/category', 'CategoryController@create')->middleware('auth', 'checklvl');
+Route::post('/admin/create/category', 'CategoryController@PostCreate')->middleware('auth', 'checklvl');
+
+// Edit Category
+Route::get('/admin/edit/category/{id}', 'CategoryController@edit')->middleware('auth', 'checklvl');
+Route::post('/admin/edit/category/{id}', 'CategoryController@PostEdit')->middleware('auth', 'checklvl');
+
 // Delete
 Route::get('/admin/delete/{id}', 'ProductController@delete')->middleware('auth', 'checklvl');
+Route::get('/admin/delete/category/{id}', 'CategoryController@delete')->middleware('auth', 'checklvl');
 
 // Shoppingcart
 Route::get('/shoppingcart', 'CartController@index')->middleware('auth');

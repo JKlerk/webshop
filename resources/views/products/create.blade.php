@@ -9,7 +9,7 @@
 			@csrf
 			{{csrf_field()}}
 
-			<div class="antialiased p-5 w-1/4 border-b shadow mt-4 relative border border-black" style="max-height: 38rem;">
+			<div class="antialiased p-5 w-1/4 border-b shadow mt-4 relative border border-black" style="max-height: 45rem;">
             	<div class="absolute pin-t pin-r">
             		<a class="btn text-black text-xl w-8" href="{{ url()->previous() }}"><i class="fas fa-arrow-left"></i></a>
             	</div>
@@ -21,6 +21,7 @@
 	                        <strong class="block">{{ $errors->first('desc') }}</strong>
 	                        <strong class="block">{{ $errors->first('price') }}</strong>
 	                        <strong class="block">{{ $errors->first('file') }}</strong>
+	                        <strong class="block">{{ $errors->first('category') }}</strong>
 	                    </span>
 	                </div>
 	            @endif
@@ -51,6 +52,16 @@
 						<option value="In Stock">In Stock</option>
 						<option value="Out of Stock">Out of Stock</option>
 						<option value="Discontinued">Discontinued</option>
+					</select>
+				</div>
+
+				<div class="mt-4">
+					<p class="text-trans font-semibold text-base">Category</p>
+					<select name="category[]" type="number" multiple placeholder="Enter price" class="mt-2 w-full mb-2 border-b border-black bg-white">
+						
+						@foreach($categories as $category)
+							<option value="{{ $category->id }}">{{ $category->title }}</option>	
+						@endforeach
 					</select>
 				</div>
 

@@ -27,4 +27,24 @@
         	<a href="{{ url('/admin/create')}}" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Product</a>
         </div>
     </div>
+
+    <div class="container mx-auto max-w-xl border ">
+        <h1 class="my-10 ml-3">Categories</h1>
+
+        @foreach($categories as $category)
+            <div class="flex border border-black mb-2 m-3">
+                <div class="bg-black flex p-4 w-full">
+                    <p class="text-white">{{$category->title}}</p>
+                </div>
+                <div class="flex flex-1 justify-end items-center">
+                    <a href="{{ url('/admin/edit/category/' . $category->id)}}" class="no-underline p-4 border-r border-black text-black"><i class="fas fa-pencil-alt hover:underline"></i></a>
+                    <a href="{{ url('/admin/delete/category/' . $category->id)}}" class="no-underline p-4 text-black hover:underline">X</a>
+                </div>
+            </div>
+        @endforeach
+
+        <div class="w-full flex flex-1 justify-end mb-2 mt-6">
+            <a href="{{ url('/admin/create/category')}}" class="border-1 border border-black text-black p-4 mr-3 hover:underline">+ Add Category</a>
+        </div>
+    </div>
 </body>

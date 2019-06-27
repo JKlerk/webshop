@@ -48,6 +48,11 @@
 							<option value="Sugar">Sugar</option>
 							<option value="Cream">Cream</option>
 						</select>
+						<p class="my-2">Categories:</p>
+						@foreach($product->categories as $category)
+							<p class="border-b border-black my-2">{{$category->title}}</p>
+						@endforeach
+
 						<div class="w-full mt-4 flex justify-end">
 							<button type="submit" class="p-2 mt-16 border-black border-2 hover:shadow hover:underline">+ Add to cart</button>
 						</div>
