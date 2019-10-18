@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
-use App\Modules\ShoppingCart;
 
 class OrderController extends Controller
 {
+	/**
+	 * Gets all items from shopping cart then creates an order
+	 *
+	 * @param Request $request
+	 * @return void
+	 */
     public function index(Request $request)
     {
     	$cart = ShoppingCart::getItems();
@@ -15,7 +20,7 @@ class OrderController extends Controller
     	$price = 0;
 
     	foreach ($cart as $item) {
-    		$price += $item[0]['price'] * $item[0]['quantity'];
+    		$price += $item['price'] * $item['quantity'];
     	}
 
     	$order = new App\Order;
@@ -27,7 +32,7 @@ class OrderController extends Controller
     	$order->save();
 
 		foreach ($cart as $item) {
-            $product = App\Product::find($item[0]['id'])->id;
+            $product = App\Product::find($item['id'])->id;
             $order->products()->attach($product);
         }
 
