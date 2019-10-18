@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Auth;
 use App;
 
 class PageController extends Controller
@@ -13,9 +11,10 @@ class PageController extends Controller
      *
      * @return void
      */
-    public function index() {
-    	$products = App\Product::all();
-    	return view('pages.index', compact('products'));
+    public function index()
+    {
+        $products = App\Product::all();
+        return view('pages.index', compact('products'));
     }
 
     /**
@@ -33,12 +32,12 @@ class PageController extends Controller
      *
      * @return void
      */
-    public function admin() {
+    public function admin()
+    {
 
-    	$products = App\Product::all();
+        $products = App\Product::all();
         $categories = App\Category::all();
 
-    	return view('pages.admin', compact('products','categories'));
-
+        return view('pages.admin', compact('products', 'categories'));
     }
 }

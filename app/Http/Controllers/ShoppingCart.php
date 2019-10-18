@@ -31,10 +31,10 @@ class ShoppingCart extends CartController
     {
         $specific = $this->getItem($id);
 
-        if(!$specific){
+        if (!$specific) {
             Session::push('cart', $cart);
             return true;
-        } else{
+        } else {
             return false;
         }
     }
@@ -46,7 +46,8 @@ class ShoppingCart extends CartController
      * @param $id
      * @return void
      */
-    public function updateItem($request ,$id) {
+    public function updateItem($request, $id)
+    {
         $specific = $this->getItem($id);
         $product = Product::find($id);
 
@@ -54,18 +55,16 @@ class ShoppingCart extends CartController
 
         Session::forget('cart.' . key($specific));
 
-        $cart = [ 
-                'id' => $product->id,
-                'title' => $product->title,
-                'quantity' => $request->quantity,
-                'shortdesc' => $product->shortdesc,
-                'price' => $product->price,
-                'selectedSize' => $old['selectedSize'],
-                'selectedTopping' => $old['selectedTopping'],
+        $cart = [
+            'id' => $product->id,
+            'title' => $product->title,
+            'quantity' => $request->quantity,
+            'shortdesc' => $product->shortdesc,
+            'price' => $product->price,
+            'selectedSize' => $old['selectedSize'],
+            'selectedTopping' => $old['selectedTopping'],
         ];
-
         Session::push('cart', $cart);
-
     }
 
     /**
@@ -91,7 +90,7 @@ class ShoppingCart extends CartController
         if (!$items) {
             return null;
         }
-        $specific = Arr::where($items, function ($value, $key) use($id) {
+        $specific = Arr::where($items, function ($value, $key) use ($id) {
             return $value['id'] == $id;
         });
 
@@ -105,10 +104,9 @@ class ShoppingCart extends CartController
      * @return void
      */
     public function removeItem($id)
-    {  
+    {
         $specific = $this->getItem($id);
 
         Session::forget('cart.' . key($specific));
-
     }
 }

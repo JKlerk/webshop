@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
-use Session;
 
 class CartController extends Controller
 {
@@ -13,12 +12,13 @@ class CartController extends Controller
      *
      * @return void
      */
-    public function index() {
+    public function index()
+    {
 
-	    $items = ShoppingCart::getItems();
+        $items = ShoppingCart::getItems();
         // $item->getItems();
 
-	    return view('pages.shoppingcart', compact('items'));
+        return view('pages.shoppingcart', compact('items'));
     }
 
     /**
@@ -28,7 +28,7 @@ class CartController extends Controller
      * @param $id
      * @return void
      */
-	public function addCart(Request $request, $id)
+    public function addCart(Request $request, $id)
     {
         $product = App\Product::find($id);
 
@@ -38,7 +38,7 @@ class CartController extends Controller
             'selectedTopping' => 'required'
         ]);
 
-    	$cart = [ 
+        $cart = [
             'id' => $product->id,
             'title' => $product->title,
             'quantity' => 1,
@@ -67,10 +67,11 @@ class CartController extends Controller
      * @param $id
      * @return void
      */
-    public function removeCart($id){
+    public function removeCart($id)
+    {
 
         $item = new ShoppingCart($id);
-    	$item->removeItem($id);
+        $item->removeItem($id);
 
         return redirect()->back();
     }
@@ -83,7 +84,8 @@ class CartController extends Controller
      * @return void
      */
 
-    public function updateCart(Request $request, $id){
+    public function updateCart(Request $request, $id)
+    {
         $item = new ShoppingCart($request, $id);
         $item->updateItem($request, $id);
 
@@ -100,5 +102,4 @@ class CartController extends Controller
         $items = ShoppingCart::getItems();
         return view('pages.pay', compact('items'));
     }
-
 }

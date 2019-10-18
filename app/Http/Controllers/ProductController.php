@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 use App;
-use Image;
 
 class ProductController extends Controller
 {
@@ -15,10 +13,11 @@ class ProductController extends Controller
      * @param [type] $id
      * @return void
      */
-    public function view($id) {
+    public function view($id)
+    {
 
         $product = App\Product::where('id', $id)->with('categories')->first();
-    	return view('products.view', compact('product'));
+        return view('products.view', compact('product'));
     }
 
     /**
@@ -26,12 +25,13 @@ class ProductController extends Controller
      *
      * @return void
      */
-    public function create() {
+    public function create()
+    {
         $categories = App\Category::all();
 
         return view('products.create', compact('categories'));
     }
-    
+
     /**
      * Validates data then inserts it into database and redirects to admin page
      *
@@ -109,6 +109,6 @@ class ProductController extends Controller
     {
         $product = App\Product::find($id);
         $product->delete();
-        return redirect()->back();     
+        return redirect()->back();
     }
 }

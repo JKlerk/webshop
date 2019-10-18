@@ -12,10 +12,11 @@ class CategoryController extends Controller
      *
      * @return void
      */
-    public function create() {
-		return view('categories.create');
+    public function create()
+    {
+        return view('categories.create');
     }
-    
+
     /**
      * Validates date then inserts to database
      *
@@ -73,6 +74,6 @@ class CategoryController extends Controller
     {
         $category = App\Category::find($id);
         $category->delete();
-        return redirect()->back();     
+        return redirect()->back();
     }
 }
