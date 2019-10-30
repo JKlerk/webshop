@@ -48,7 +48,7 @@ class ShoppingCart extends CartController
      */
     public function updateItem($request, $id)
     {
-        $specific = $this->getItem($id);
+        $specific = $this::getItem($id);
         $product = Product::find($id);
 
         $old = Session::get('cart.' . key($specific));
@@ -83,9 +83,9 @@ class ShoppingCart extends CartController
      * @param $id
      * @return array
      */
-    public function getItem($id)
+    public static function getItem($id)
     {
-        $items = $this::getItems();
+        $items = self::getItems();
 
         if (!$items) {
             return null;
@@ -103,9 +103,9 @@ class ShoppingCart extends CartController
      * @param $id
      * @return void
      */
-    public function removeItem($id)
+    public static function removeItem($id)
     {
-        $specific = $this->getItem($id);
+        $specific = self::getItem($id);
 
         Session::forget('cart.' . key($specific));
     }

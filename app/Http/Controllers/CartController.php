@@ -70,8 +70,7 @@ class CartController extends Controller
     public function removeCart($id)
     {
 
-        $item = new ShoppingCart($id);
-        $item->removeItem($id);
+        ShoppingCart::removeItem($id);
 
         return redirect()->back();
     }
