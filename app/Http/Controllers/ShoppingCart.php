@@ -13,26 +13,24 @@ class ShoppingCart extends CartController
      *
      * @return array
      */
-    public static function getItems()
-    {
+    public function getItems(){
         $items = Session::get('cart');
-
         return $items;
     }
 
     /**
-     * Adds a new item to sessions, if it doenst exist it will return false
+     * Adds a new item to sessions, if it exist it will return false
      *
-     * @param $cart
+     * @param $cartItem
      * @param $id
      * @return boolean
      */
-    public function newItem($cart, $id)
+    public function newItem($cartItem)
     {
-        $specific = $this->getItem($id);
+        $specific = $this->getSpecific($cartItem['id']);
 
         if (!$specific) {
-            Session::push('cart', $cart);
+            Session::push('cart', $cartItem);
             return true;
         } else {
             return false;
@@ -48,14 +46,14 @@ class ShoppingCart extends CartController
      */
     public function updateItem($request, $id)
     {
-        $specific = $this::getItem($id);
+        $specific = $this->getSpecific($id);
         $product = Product::find($id);
 
         $old = Session::get('cart.' . key($specific));
 
         Session::forget('cart.' . key($specific));
 
-        $cart = [
+        $cartItem = [
             'id' => $product->id,
             'title' => $product->title,
             'quantity' => $request->quantity,
@@ -64,7 +62,7 @@ class ShoppingCart extends CartController
             'selectedSize' => $old['selectedSize'],
             'selectedTopping' => $old['selectedTopping'],
         ];
-        Session::push('cart', $cart);
+        Session::push('cart', $cartItem);
     }
 
     /**
@@ -72,7 +70,7 @@ class ShoppingCart extends CartController
      *
      * @return void
      */
-    public static function clearCart()
+    public function clearCart()
     {
         Session::forget('cart');
     }
@@ -83,9 +81,9 @@ class ShoppingCart extends CartController
      * @param $id
      * @return array
      */
-    public static function getItem($id)
+    public function getSpecific($id)
     {
-        $items = self::getItems();
+        $items = $this->getItems();
 
         if (!$items) {
             return null;
@@ -93,7 +91,6 @@ class ShoppingCart extends CartController
         $specific = Arr::where($items, function ($value, $key) use ($id) {
             return $value['id'] == $id;
         });
-
         return $specific;
     }
 
@@ -103,9 +100,9 @@ class ShoppingCart extends CartController
      * @param $id
      * @return void
      */
-    public static function removeItem($id)
+    public function removeItem($id)
     {
-        $specific = self::getItem($id);
+        $specific = $this->getSpecific($id);
 
         Session::forget('cart.' . key($specific));
     }

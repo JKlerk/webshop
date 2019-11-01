@@ -15,11 +15,11 @@ class OrderController extends Controller
 	 */
 	public function index(Request $request)
 	{
-		$cart = ShoppingCart::getItems();
-
+		$cart = new ShoppingCart;
+		$items = $cart->getItems();
 		$price = 0;
 
-		foreach ($cart as $item) {
+		foreach ($items as $item) {
 			$price += $item['price'] * $item['quantity'];
 		}
 
@@ -31,12 +31,12 @@ class OrderController extends Controller
 
 		$order->save();
 
-		foreach ($cart as $item) {
+		foreach ($items as $item) {
 			$product = App\Product::find($item['id'])->id;
 			$order->products()->attach($product);
 		}
 
-		ShoppingCart::clearCart();
+		$cart->clearCart();
 
 		return redirect(url('/'));
 	}

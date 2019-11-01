@@ -15,9 +15,10 @@ class CartController extends Controller
     public function index()
     {
 
-        $items = ShoppingCart::getItems();
-        // $item->getItems();
+        $cart = new ShoppingCart;
+        $items = $cart->getItems();
 
+        // return json_encode($items);
         return view('pages.shoppingcart', compact('items'));
     }
 
@@ -38,7 +39,7 @@ class CartController extends Controller
             'selectedTopping' => 'required'
         ]);
 
-        $cart = [
+        $cartItem = [
             'id' => $product->id,
             'title' => $product->title,
             'quantity' => 1,
@@ -48,9 +49,8 @@ class CartController extends Controller
             'selectedTopping' => $request->selectedTopping,
         ];
 
-        $item = new ShoppingCart($cart, $product->id);
-
-        $exists = $item->newItem($cart, $product->id);
+        $cart = new ShoppingCart();
+        $exists = $cart->newItem($cartItem);
 
         if ($exists) {
             return redirect()->action('CartController@index');
@@ -69,8 +69,8 @@ class CartController extends Controller
      */
     public function removeCart($id)
     {
-
-        ShoppingCart::removeItem($id);
+        $cart = new ShoppingCart();
+        $cart->removeItem($id);
 
         return redirect()->back();
     }
@@ -85,8 +85,8 @@ class CartController extends Controller
 
     public function updateCart(Request $request, $id)
     {
-        $item = new ShoppingCart($request, $id);
-        $item->updateItem($request, $id);
+        $cart = new ShoppingCart();
+        $cart->updateItem($request, $id);
 
         return redirect()->action('CartController@index');
     }
@@ -98,7 +98,8 @@ class CartController extends Controller
      */
     public function pay()
     {
-        $items = ShoppingCart::getItems();
+        $cart = new ShoppingCart();
+        $items = $cart->getItems();
         return view('pages.pay', compact('items'));
     }
 }
